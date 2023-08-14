@@ -14,6 +14,10 @@
 #define PIN_INPUT	0
 #define PIN_OUTPUT	1
 
+/* Copy_u8_PortDirection Options */
+#define PORT_INPUT	0x00
+#define PORT_OUTPUT	0xFF
+
 /* Set Pin Direction Function */
 Error_state MDIO_Error_state_SetPinDirection(u8 Copy_u8_PortNumber, u8 Copy_u8_PinNumber, u8 Copy_u8_PinDirection);
 
