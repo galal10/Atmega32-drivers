@@ -100,7 +100,25 @@ Error_state MDIO_Error_state_SetPortDirection(u8 Copy_u8_PortNumber, u8 Copy_u8_
 	{
 		switch( Copy_u8_PortNumber )
 		{
-			
+			case MDIO_PORTA:
+				DDRA = Copy_u8_PortDirection;
+				break;
+
+			case MDIO_PORTB:
+				DDRB = Copy_u8_PortDirection;
+				break;
+				
+			case MDIO_PORTC:
+				DDRC = Copy_u8_PortDirection;
+				break;
+				
+			case MDIO_PORTD:
+				DDRD = Copy_u8_PortDirection;
+				break;
+				
+			default:
+				LOC_Error_state_ReturnState = NOK;
+				break;
 		}
 	}
 
