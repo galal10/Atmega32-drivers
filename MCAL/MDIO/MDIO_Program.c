@@ -330,7 +330,7 @@ Error_state MDIO_Error_state_TogglePinValue(u8 Copy_u8_PortNumber, u8 Copy_u8_Pi
 Error_state MDIO_Error_state_ActivatePullUpResistor(u8 Copy_u8_PortNumber, u8 Copy_u8_PinNumber)
 {
 	Error_state LOC_Error_state_ReturnState = OK;
-
+	
 	if( (Copy_u8_PinNumber >= PIN0) && (Copy_u8_PinNumber <= PIN7) )
 	{
 		switch( Copy_u8_PortNumber )
@@ -339,16 +339,28 @@ Error_state MDIO_Error_state_ActivatePullUpResistor(u8 Copy_u8_PortNumber, u8 Co
 				SET_BIT(PORTA, Copy_u8_PinNumber);
 				break;
 			
+			case MDIO_PORTB:
+				SET_BIT(PORTB, Copy_u8_PinNumber);
+				break;
+
+			case MDIO_PORTC:
+				SET_BIT(PORTC, Copy_u8_PinNumber);
+				break;
+				
+			case MDIO_PORTD:
+				SET_BIT(PORTD, Copy_u8_PinNumber);
+				break;
+				
 			default:
 				LOC_Error_state_ReturnState = NOK;
 				break;
 		}
 	}
-
+	
 	else
 	{
 		LOC_Error_state_ReturnState = NOK;
 	}
-
+	
 	return LOC_Error_state_ReturnState;
 }
