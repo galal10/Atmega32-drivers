@@ -262,6 +262,10 @@ Error_state MDIO_Error_state_GetPinValue(u8 Copy_u8_PortNumber, u8 Copy_u8_PinNu
 	{
 		switch( Copy_u8_PortNumber )
 		{
+			case MDIO_PORTA:
+				*P_u8_PinValue = GET_BIT(PINA, Copy_u8_PinNumber);
+				break;
+			
 			default:
 				LOC_Error_state_ReturnState = NOK;
 				break;
