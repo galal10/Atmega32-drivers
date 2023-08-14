@@ -292,3 +292,10 @@ Error_state MDIO_Error_state_GetPinValue(u8 Copy_u8_PortNumber, u8 Copy_u8_PinNu
 	return LOC_Error_state_ReturnState;
 
 }
+
+Error_state MDIO_Error_state_TogglePinValue(u8 Copy_u8_PortNumber, u8 Copy_u8_PinNumber)
+{
+	Error_state LOC_Error_state_ReturnState = OK;
+
+	return LOC_Error_state_ReturnState;
+}
