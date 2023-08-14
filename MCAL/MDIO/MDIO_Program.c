@@ -218,5 +218,15 @@ Error_state MDIO_Error_state_SetPortValue(u8 Copy_u8_PortNumber, u8 Copy_u8_Port
 {
 	Error_state LOC_Error_state_ReturnState = OK;
 
+	if( (Copy_u8_PortValue >= 0) && (Copy_u8_PortValue <= 255) )
+	{
+
+	}
+
+	else
+	{
+		LOC_Error_state_ReturnState = NOK;
+	}
+
 	return LOC_Error_state_ReturnState;
 }
