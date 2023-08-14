@@ -538,5 +538,20 @@ Error_state MDIO_Error_state_SetNibbleValues(u8 Copy_u8_PortNumber, u8 Copy_u8_P
 {
 	Error_state LOC_Error_state_ReturnState = OK;
 
-	return LOC_Error_state_ReturnState
+	if( Copy_u8_PinPos == PIN_LSB )
+	{
+
+	}
+
+	else if( Copy_u8_PinPos == PIN_MSB )
+	{
+
+	}
+
+	else
+	{
+		LOC_Error_state_ReturnState = NOK;
+	}
+	
+	return LOC_Error_state_ReturnState;
 }
