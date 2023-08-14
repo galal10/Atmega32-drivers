@@ -537,7 +537,7 @@ Error_state MDIO_Error_state_SetNibbleDirection(u8 Copy_u8_PortNumber, u8 Copy_u
 Error_state MDIO_Error_state_SetNibbleValues(u8 Copy_u8_PortNumber, u8 Copy_u8_PinPos, u8 Copy_u8_PinValues)
 {
 	Error_state LOC_Error_state_ReturnState = OK;
-
+	
 	if( Copy_u8_PinPos == PIN_LSB )
 	{
 		switch( Copy_u8_PortNumber )
@@ -546,11 +546,22 @@ Error_state MDIO_Error_state_SetNibbleValues(u8 Copy_u8_PortNumber, u8 Copy_u8_P
 				PORTA = ( (PORTA & 0xF0) | (Copy_u8_PinValues & 0x0F) );
 				break;
 
+			case MDIO_PORTB:
+				PORTB = ( (PORTB & 0xF0) | (Copy_u8_PinValues & 0x0F) );
+				break;
+
+			case MDIO_PORTC:
+				PORTC = ( (PORTC & 0xF0) | (Copy_u8_PinValues & 0x0F) );
+				break;
+
+			case MDIO_PORTD:
+				PORTD = ( (PORTD & 0xF0) | (Copy_u8_PinValues & 0x0F) );
+				break;
+			
 			default:
 				LOC_Error_state_ReturnState = NOK;
 				break;
 		}
-
 	}
 
 	else if( Copy_u8_PinPos == PIN_MSB )
@@ -560,7 +571,19 @@ Error_state MDIO_Error_state_SetNibbleValues(u8 Copy_u8_PortNumber, u8 Copy_u8_P
 			case MDIO_PORTA:
 				PORTA = ( (Copy_u8_PinValues << 4) | (PORTA & 0x0F) );
 				break;
-				
+
+			case MDIO_PORTB:
+				PORTB = ( (Copy_u8_PinValues << 4) | (PORTB & 0x0F) );
+				break;
+
+			case MDIO_PORTC:
+				PORTC = ( (Copy_u8_PinValues << 4) | (PORTC & 0x0F) );
+				break;
+
+			case MDIO_PORTD:
+				PORTD = ( (Copy_u8_PinValues << 4) | (PORTD & 0x0F) );
+				break;
+			
 			default:
 				LOC_Error_state_ReturnState = NOK;
 				break;
@@ -571,6 +594,6 @@ Error_state MDIO_Error_state_SetNibbleValues(u8 Copy_u8_PortNumber, u8 Copy_u8_P
 	{
 		LOC_Error_state_ReturnState = NOK;
 	}
-
+	
 	return LOC_Error_state_ReturnState;
 }
