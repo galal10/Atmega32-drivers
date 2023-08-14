@@ -220,7 +220,12 @@ Error_state MDIO_Error_state_SetPortValue(u8 Copy_u8_PortNumber, u8 Copy_u8_Port
 
 	if( (Copy_u8_PortValue >= 0) && (Copy_u8_PortValue <= 255) )
 	{
-
+		switch( Copy_u8_PortNumber )
+		{
+			default:
+				LOC_Error_state_ReturnState = NOK;
+				break;
+		}
 	}
 
 	else
