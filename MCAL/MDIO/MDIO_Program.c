@@ -542,7 +542,10 @@ Error_state MDIO_Error_state_SetNibbleValues(u8 Copy_u8_PortNumber, u8 Copy_u8_P
 	{
 		switch( Copy_u8_PortNumber )
 		{
-			
+			case MDIO_PORTA:
+				PORTA = ( (PORTA & 0xF0) | (Copy_u8_PinValues & 0x0F) );
+				break;
+
 			default:
 				LOC_Error_state_ReturnState = NOK;
 				break;
@@ -554,7 +557,10 @@ Error_state MDIO_Error_state_SetNibbleValues(u8 Copy_u8_PortNumber, u8 Copy_u8_P
 	{
 		switch( Copy_u8_PortNumber )
 		{
-			
+			case MDIO_PORTA:
+				PORTA = ( (Copy_u8_PinValues << 4) | (PORTA & 0x0F) );
+				break;
+				
 			default:
 				LOC_Error_state_ReturnState = NOK;
 				break;
