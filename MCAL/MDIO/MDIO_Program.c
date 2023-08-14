@@ -371,12 +371,22 @@ Error_state MDIO_Error_state_SetNibbleDirection(u8 Copy_u8_PortNumber, u8 Copy_u
 
 	if( Copy_u8_PinPos == PIN_LSB )
 	{
-
+		switch( Copy_u8_PortNumber )
+		{
+			default:
+				LOC_Error_state_ReturnState = NOK;
+				break;
+		}
 	}
 
 	else if( Copy_u8_PinPos == PIN_MSB )
 	{
-
+		switch( Copy_u8_PortNumber )
+		{
+			default:
+				LOC_Error_state_ReturnState = NOK;
+				break;
+		}
 	}
 
 	else
