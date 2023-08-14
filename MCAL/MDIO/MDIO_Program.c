@@ -217,7 +217,7 @@ Error_state MDIO_Error_state_SetPinValue(u8 Copy_u8_PortNumber, u8 Copy_u8_PinNu
 Error_state MDIO_Error_state_SetPortValue(u8 Copy_u8_PortNumber, u8 Copy_u8_PortValue)
 {
 	Error_state LOC_Error_state_ReturnState = OK;
-
+	
 	if( (Copy_u8_PortValue >= 0) && (Copy_u8_PortValue <= 255) )
 	{
 		switch( Copy_u8_PortNumber )
@@ -225,17 +225,31 @@ Error_state MDIO_Error_state_SetPortValue(u8 Copy_u8_PortNumber, u8 Copy_u8_Port
 			case MDIO_PORTA:
 				PORTA = Copy_u8_PortValue;
 				break;
-			
+
+			case MDIO_PORTB:
+				PORTB = Copy_u8_PortValue;
+				break;
+
+			case MDIO_PORTC:
+				PORTC = Copy_u8_PortValue;
+				break;
+
+			case MDIO_PORTD:
+				PORTD = Copy_u8_PortValue;
+				break;			
+				
 			default:
 				LOC_Error_state_ReturnState = NOK;
 				break;
 		}
+		
 	}
-
+	
 	else
 	{
 		LOC_Error_state_ReturnState = NOK;
 	}
-
+	
 	return LOC_Error_state_ReturnState;
+
 }
