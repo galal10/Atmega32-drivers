@@ -26,6 +26,19 @@
 #define PIN_LSB		0
 #define PIN_MSB		1
 
+/* Copy_u8_PinNumber Options */
+typedef enum
+{
+	PIN0 = 0,
+	PIN1,
+	PIN2,
+	PIN3,
+	PIN4,
+	PIN5,
+	PIN6,
+	PIN7
+}Pin_t;
+
 /* Set Pin Direction Function */
 Error_state MDIO_Error_state_SetPinDirection(u8 Copy_u8_PortNumber, u8 Copy_u8_PinNumber, u8 Copy_u8_PinDirection);
 
