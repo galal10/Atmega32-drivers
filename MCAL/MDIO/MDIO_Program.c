@@ -301,6 +301,10 @@ Error_state MDIO_Error_state_TogglePinValue(u8 Copy_u8_PortNumber, u8 Copy_u8_Pi
 	{
 		switch( Copy_u8_PortNumber )
 		{
+			case MDIO_PORTA:
+				TOGGLE_BIT(PORTA, Copy_u8_PinNumber);
+				break;
+
 			default:
 				LOC_Error_state_ReturnState = NOK;
 				break;
