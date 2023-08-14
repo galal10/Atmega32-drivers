@@ -22,6 +22,10 @@
 #define PIN_LOW		0
 #define	PIN_HIGH	1
 
+/* Copy_u8_PinPos Options */
+#define PIN_LSB		0
+#define PIN_MSB		1
+
 /* Set Pin Direction Function */
 Error_state MDIO_Error_state_SetPinDirection(u8 Copy_u8_PortNumber, u8 Copy_u8_PinNumber, u8 Copy_u8_PinDirection);
 
