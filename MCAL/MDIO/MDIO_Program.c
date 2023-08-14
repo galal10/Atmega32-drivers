@@ -129,3 +129,10 @@ Error_state MDIO_Error_state_SetPortDirection(u8 Copy_u8_PortNumber, u8 Copy_u8_
 	
 	return LOC_Error_state_ReturnState;
 }
+
+Error_state MDIO_Error_state_SetPinValue(u8 Copy_u8_PortNumber, u8 Copy_u8_PinNumber, u8 Copy_u8_PinValue)
+{
+	Error_state LOC_Error_state_ReturnState = OK;
+
+	return LOC_Error_state_ReturnState;
+}
