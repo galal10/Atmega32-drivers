@@ -373,6 +373,23 @@ Error_state MDIO_Error_state_SetNibbleDirection(u8 Copy_u8_PortNumber, u8 Copy_u
 	{
 		switch( Copy_u8_PortNumber )
 		{
+			case MDIO_PORTA:
+				if( Copy_u8_PinDirection == PIN_OUTPUT )
+				{
+					DDRA = ( (DDRA & 0xF0) | (0x0F) );
+				}
+				
+				else if( Copy_u8_PinDirection == PIN_INPUT )
+				{
+					DDRA = ( (DDRA & 0xF0) | (0x00) );
+				}
+				
+				else
+				{
+					LOC_Error_state_ReturnState = NOK;
+				}
+				break;
+
 			default:
 				LOC_Error_state_ReturnState = NOK;
 				break;
@@ -381,6 +398,23 @@ Error_state MDIO_Error_state_SetNibbleDirection(u8 Copy_u8_PortNumber, u8 Copy_u
 
 	else if( Copy_u8_PinPos == PIN_MSB )
 	{
+		case MDIO_PORTA:
+			if( Copy_u8_PinDirection == PIN_OUTPUT )
+			{
+				DDRA = ( (0xF0) | ( DDRA & 0x0F) );
+			}
+			
+			else if( Copy_u8_PinDirection == PIN_INPUT )
+			{
+				DDRA = ( (0x00) | ( DDRA & 0x0F) );
+			}
+			
+			else
+			{
+				LOC_Error_state_ReturnState = NOK;
+			}
+			break;
+
 		switch( Copy_u8_PortNumber )
 		{
 			default:
