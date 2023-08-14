@@ -5,7 +5,7 @@ Error_state MDIO_Error_state_SetPinDirection(u8 Copy_u8_PortNumber, u8 Copy_u8_P
 {
 	Error_state LOC_Error_state_ReturnState = OK;
 	
-	if( (Copy_u8_PinNumber >= 0) && (Copy_u8_PinNumber < 8) )
+	if( (Copy_u8_PinNumber >= PIN0) && (Copy_u8_PinNumber <= PIN7) )
 	{	
 		switch( Copy_u8_PortNumber )
 		{
