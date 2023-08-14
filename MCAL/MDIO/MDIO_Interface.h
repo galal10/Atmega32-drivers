@@ -16,4 +16,7 @@ Error_state MDIO_Error_state_SetPortValue(u8 Copy_u8_PortNumber, u8 Copy_u8_Port
 /* Get Pin Value Function */
 Error_state MDIO_Error_state_GetPinValue(u8 Copy_u8_PortNumber, u8 Copy_u8_PinNumber, u8 *P_u8_PinValue);
 
+/* Toggle Pin Value Function */
+Error_state MDIO_Error_state_TogglePinValue(u8 Copy_u8_PortNumber, u8 Copy_u8_PinNumber);
+
 #endif /* MDIO_INTERFACE_H_ */
