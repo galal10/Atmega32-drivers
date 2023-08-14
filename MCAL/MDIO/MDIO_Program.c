@@ -364,3 +364,10 @@ Error_state MDIO_Error_state_ActivatePullUpResistor(u8 Copy_u8_PortNumber, u8 Co
 	
 	return LOC_Error_state_ReturnState;
 }
+
+Error_state MDIO_Error_state_SetNibbleDirection(u8 Copy_u8_PortNumber, u8 Copy_u8_PinPos, u8 Copy_u8_PinDirection)
+{
+	Error_state LOC_Error_state_ReturnState = OK;
+
+	return LOC_Error_state_ReturnState;
+}
