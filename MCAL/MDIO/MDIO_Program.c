@@ -222,6 +222,10 @@ Error_state MDIO_Error_state_SetPortValue(u8 Copy_u8_PortNumber, u8 Copy_u8_Port
 	{
 		switch( Copy_u8_PortNumber )
 		{
+			case MDIO_PORTA:
+				PORTA = Copy_u8_PortValue;
+				break;
+			
 			default:
 				LOC_Error_state_ReturnState = NOK;
 				break;
