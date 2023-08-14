@@ -146,7 +146,7 @@ Error_state MDIO_Error_state_SetPinValue(u8 Copy_u8_PortNumber, u8 Copy_u8_PinNu
 				}
 				else if( Copy_u8_PinValue == PIN_LOW )
 				{
-
+					CLR_BIT(PORTA, Copy_u8_PinNumber);
 				}
 				else
 				{
