@@ -4,6 +4,12 @@
 #include "../../LIB/LSTD_TYPES.h"
 #include "../../LIB/LBITS.h"
 
+/* Copy_u8_PortNumber Options */
+#define MDIO_PORTA	0
+#define MDIO_PORTB	1
+#define MDIO_PORTC	2
+#define MDIO_PORTD	3
+
 /* Set Pin Direction Function */
 Error_state MDIO_Error_state_SetPinDirection(u8 Copy_u8_PortNumber, u8 Copy_u8_PinNumber, u8 Copy_u8_PinDirection);
 
