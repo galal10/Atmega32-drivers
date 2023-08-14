@@ -22,4 +22,7 @@ Error_state MDIO_Error_state_TogglePinValue(u8 Copy_u8_PortNumber, u8 Copy_u8_Pi
 /* Activate Pull up Resistor Function */
 Error_state MDIO_Error_state_ActivatePullUpResistor(u8 Copy_u8_PortNumber, u8 Copy_u8_PinNumber);
 
+/* Set Nibble Direction Function */
+Error_state MDIO_Error_state_SetNibbleDirection(u8 Copy_u8_PortNumber, u8 Copy_u8_PinNumber, u8 Copy_u8_PinDirection);
+
 #endif /* MDIO_INTERFACE_H_ */
