@@ -140,6 +140,18 @@ Error_state MDIO_Error_state_SetPinValue(u8 Copy_u8_PortNumber, u8 Copy_u8_PinNu
 		switch( Copy_u8_PortNumber )
 		{
 			case MDIO_PORTA:
+				if( Copy_u8_PinValue == PIN_HIGH )
+				{
+
+				}
+				else if( Copy_u8_PinValue == PIN_LOW )
+				{
+
+				}
+				else
+				{
+					LOC_Error_state_ReturnState = NOK;
+				}
 				break;
 		}
 	}
