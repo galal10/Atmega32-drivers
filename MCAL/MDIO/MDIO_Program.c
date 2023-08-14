@@ -89,7 +89,6 @@ Error_state MDIO_Error_state_SetPinDirection(u8 Copy_u8_PortNumber, u8 Copy_u8_P
 	}
 	
 	return LOC_Error_state_ReturnState;
-
 }
 
 Error_state MDIO_Error_state_SetPortDirection(u8 Copy_u8_PortNumber, u8 Copy_u8_PortDirection)
@@ -211,7 +210,6 @@ Error_state MDIO_Error_state_SetPinValue(u8 Copy_u8_PortNumber, u8 Copy_u8_PinNu
 	}
 	
 	return LOC_Error_state_ReturnState;
-
 }
 
 Error_state MDIO_Error_state_SetPortValue(u8 Copy_u8_PortNumber, u8 Copy_u8_PortValue)
@@ -251,7 +249,6 @@ Error_state MDIO_Error_state_SetPortValue(u8 Copy_u8_PortNumber, u8 Copy_u8_Port
 	}
 	
 	return LOC_Error_state_ReturnState;
-
 }
 
 Error_state MDIO_Error_state_GetPinValue(u8 Copy_u8_PortNumber, u8 Copy_u8_PinNumber, u8 *P_u8_PinValue)
@@ -290,13 +287,12 @@ Error_state MDIO_Error_state_GetPinValue(u8 Copy_u8_PortNumber, u8 Copy_u8_PinNu
 	}
 	
 	return LOC_Error_state_ReturnState;
-
 }
 
 Error_state MDIO_Error_state_TogglePinValue(u8 Copy_u8_PortNumber, u8 Copy_u8_PinNumber)
 {
 	Error_state LOC_Error_state_ReturnState = OK;
-
+	
 	if( (Copy_u8_PinNumber >= PIN0) && (Copy_u8_PinNumber <= PIN7) )
 	{
 		switch( Copy_u8_PortNumber )
