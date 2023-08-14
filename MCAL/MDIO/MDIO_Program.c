@@ -258,5 +258,15 @@ Error_state MDIO_Error_state_GetPinValue(u8 Copy_u8_PortNumber, u8 Copy_u8_PinNu
 {
 	Error_state LOC_Error_state_ReturnState = OK;
 
+	if( ((Copy_u8_PinNumber >= PIN0) && (Copy_u8_PinNumber <= PIN7)) && (P_u8_PinValue != NULL) )
+	{
+
+	}
+
+	else
+	{
+		LOC_Error_state_ReturnState = NOK;
+	}
+
 	return LOC_Error_state_ReturnState;
 }
