@@ -95,7 +95,7 @@ Error_state MDIO_Error_state_SetPinDirection(u8 Copy_u8_PortNumber, u8 Copy_u8_P
 Error_state MDIO_Error_state_SetPortDirection(u8 Copy_u8_PortNumber, u8 Copy_u8_PortDirection)
 {
 	Error_state LOC_Error_state_ReturnState = OK;
-
+	
 	if( (Copy_u8_PortDirection == PORT_INPUT) || (Copy_u8_PortDirection == PORT_OUTPUT) )
 	{
 		switch( Copy_u8_PortNumber )
@@ -121,11 +121,11 @@ Error_state MDIO_Error_state_SetPortDirection(u8 Copy_u8_PortNumber, u8 Copy_u8_
 				break;
 		}
 	}
-
+	
 	else
 	{
 		LOC_Error_state_ReturnState = NOK;
 	}
-
+	
 	return LOC_Error_state_ReturnState;
 }
