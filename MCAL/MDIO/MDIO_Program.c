@@ -297,5 +297,14 @@ Error_state MDIO_Error_state_TogglePinValue(u8 Copy_u8_PortNumber, u8 Copy_u8_Pi
 {
 	Error_state LOC_Error_state_ReturnState = OK;
 
+	if( (Copy_u8_PinNumber >= PIN0) && (Copy_u8_PinNumber <= PIN7) )
+	{
+		
+	}
+	
+	else
+	{
+		LOC_Error_state_ReturnState = NOK;
+	}
 	return LOC_Error_state_ReturnState;
 }
