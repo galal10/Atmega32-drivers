@@ -1,0 +1,4 @@
+#ifndef HCLCD_INTERFACE_H_
+#define HCLCD_INTERFACE_H_
+
+#endif /* HCLCD_INTERFACE_H_ */
