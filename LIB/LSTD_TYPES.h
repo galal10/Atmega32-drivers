@@ -14,7 +14,7 @@ typedef enum
 	OK
 }Error_state;
 
-#define NULL 	1
+#define NULL_PTR 	((void *)1)
 
 typedef unsigned char	u8;
 typedef signed char		s8;
