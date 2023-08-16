@@ -51,3 +51,7 @@ void HCLCD_Vid_Write_Char_8Bits(u8 Copy_u8_Data)
 	_delay_ms(2);
 	MDIO_Error_state_SetPinValue(CONTROL_PORT, E, PIN_HIGH);
 }
+
+void HCLCD_Vid_Write_String_8Bits(u8 *Copy_u8_Data)
+	}
+}
