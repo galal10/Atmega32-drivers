@@ -28,6 +28,7 @@
 */
 #define HCLCD_DISPLAY_ON_OFF	DISPLAY_ON_CURSOR_ON_BLINKING_ON
 
+/* DISPLAY_CLEAR no options */
 #define HCLCD_DISPLAY_CLEAR		DISPLAY_CLEAR
 
 /* Entry Mode command Options 
