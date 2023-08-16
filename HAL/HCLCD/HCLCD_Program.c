@@ -30,4 +30,6 @@ void HCLCD_Vid_8Bits_Init(void)
 	HCLCD_Vid_Write_Command_8Bits(HCLCD_DISPLAY_ON_OFF);
 	/* wait 39 µs */
 	_delay_ms(1);
+	/* Display Clear command */
+	HCLCD_Vid_Write_Command_8Bits(HCLCD_DISPLAY_CLEAR);
 }
