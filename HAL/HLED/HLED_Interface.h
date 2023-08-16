@@ -1,5 +1,9 @@
 #ifndef HLED_INTERFACE_H_
 #define HLED_INTERFACE_H_
+
+#include "../../MCAL/MDIO/MDIO_Interface.h"
+#include "../../LIB/LSTD_TYPES.h"
+
 typedef struct
 {
 	u8 Copy_u8_Port;
