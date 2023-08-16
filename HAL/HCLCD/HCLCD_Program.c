@@ -22,4 +22,6 @@ void HCLCD_Vid_8Bits_Init(void)
 {
 	/* Wait for more than 30ms */
 	_delay_ms(30);
+	/* send function set command */
+	HCLCD_Vid_Write_Command_8Bits(HCLCD_FUNCTION_SET);
 }
