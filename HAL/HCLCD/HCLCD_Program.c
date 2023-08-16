@@ -44,4 +44,10 @@ void HCLCD_Vid_Write_Char_8Bits(u8 Copy_u8_Data)
 	MDIO_Error_state_SetPinValue(CONTROL_PORT, RW, PIN_LOW);
 	/* send Data on port data */
 	MDIO_Error_state_SetPortValue(DATA_PORT, Copy_u8_Data);
+	/* Send Enable */
+	MDIO_Error_state_SetPinValue(CONTROL_PORT, E, PIN_HIGH);
+	_delay_ms(2);
+	MDIO_Error_state_SetPinValue(CONTROL_PORT, E, PIN_LOW);
+	_delay_ms(2);
+	MDIO_Error_state_SetPinValue(CONTROL_PORT, E, PIN_HIGH);
 }
