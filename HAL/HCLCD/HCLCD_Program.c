@@ -79,5 +79,9 @@ void HCLCD_Vid_Write_Number_8Bits(u32 Copy_u32_Number)
 			Copy_u32_Number /= 10;
 			LOC_Count++;
 		}
+		for(s8 i = LOC_Count-1; i >= 0; i--)
+		{
+			HCLCD_Vid_Write_Char_8Bits(ARR_Digits[i]+'0');
+		}
 	}	
 }
