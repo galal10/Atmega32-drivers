@@ -19,9 +19,9 @@ void HCLCD_Vid_Write_Command_8Bits(u8 Copy_u8_Command);
 
 void HCLCD_Vid_Write_Command_4Bits(u8 Copy_u8_Command);
 
-void HCLCD_Vid_Write_String_8Bits(u8 *Copy_u8_Data);
+void HCLCD_Vid_Write_String_8Bits(u8 *PCopy_u8_String);
 
-void HCLCD_Vid_Write_String_4Bits(u8 *Copy_u8_Data);
+void HCLCD_Vid_Write_String_4Bits(u8 *PCopy_u8_String);
 
 void HCLCD_Vid_SetPosition(u8 Copy_u8_LineNumber, u8 Copy_u8_PositionNumber);
 
