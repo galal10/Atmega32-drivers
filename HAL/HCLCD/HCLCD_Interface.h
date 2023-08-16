@@ -3,6 +3,9 @@
 
 #include "../../LIB/LSTD_TYPES.h"
 
+/* DISPLAY_CLEAR command */
+#define HCLCD_DISPLAY_CLEAR		0x01
+
 void HCLCD_Vid_8Bits_Init(void);
 
 void HCLCD_Vid_4Bits_Init(void);

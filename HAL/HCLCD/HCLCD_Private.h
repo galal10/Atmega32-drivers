@@ -11,8 +11,6 @@
 #define DISPLAY_ON_CURSOR_OFF				0x0C
 #define DISPLAY_OFF							0x08
 
-#define DISPLAY_CLEAR						0x01	
-
 #define ENTRY_MODE_INCREASE_WITH_SHIFT		0x07	/* Shift Left */
 #define ENTRY_MODE_INCREASE					0x06
 #define ENTRY_MODE_DECREASE_WITH_SHIFT		0x05	/* Shrift Right */
