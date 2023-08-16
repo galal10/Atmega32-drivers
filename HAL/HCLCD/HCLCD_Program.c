@@ -71,5 +71,6 @@ void HCLCD_Vid_Write_String_8Bits(u8 *PCopy_u8_String)
 
 void HCLCD_Vid_Write_Number_8Bits(u32 Copy_u32_Number)
 {
+	u8 ARR_Digits[10];
 	}	
 }
