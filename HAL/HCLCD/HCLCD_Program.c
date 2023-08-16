@@ -40,4 +40,6 @@ void HCLCD_Vid_Write_Char_8Bits(u8 Copy_u8_Data)
 {
 	/* select Data register ==> RS = 1 */
 	MDIO_Error_state_SetPinValue(CONTROL_PORT, RS, PIN_HIGH);
+	/* select Write mode ==> Rw = 0 */
+	MDIO_Error_state_SetPinValue(CONTROL_PORT, RW, PIN_LOW);
 }
