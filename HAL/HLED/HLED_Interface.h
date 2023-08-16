@@ -1,0 +1,3 @@
+#ifndef HLED_INTERFACE_H_
+#define HLED_INTERFACE_H_
+#endif /* HLED_INTERFACE_H_ */
