@@ -1,4 +1,4 @@
-#include "../../MCAL/MDIO/MDIO_Interface.h"
+#include "HCLCD_Interface.h"
 #include "HCLCD_Private.h"
 #include "HCLCD_Config.h"
 #include <util/delay.h>
