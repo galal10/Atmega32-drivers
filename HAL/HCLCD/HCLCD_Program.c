@@ -68,3 +68,8 @@ void HCLCD_Vid_Write_String_8Bits(u8 *PCopy_u8_String)
 		Loc_u8_count++;
 	}
 }
+
+void HCLCD_Vid_Write_Number_8Bits(u32 Copy_u32_Number)
+{
+	}	
+}
