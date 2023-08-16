@@ -5,7 +5,7 @@ void HCLCD_Vid_Write_Command_8Bits(u8 Copy_u8_Command)
 {
 	/* select Command register ==> RS = 0 */
 	MDIO_Error_state_SetPinValue(CONTROL_PORT, RS, PIN_LOW);
-	/* select Write mode ==> Rw = 0 */
+	/* select Write mode ==> RW = 0 */
 	MDIO_Error_state_SetPinValue(CONTROL_PORT, RW, PIN_LOW);
 	/* send command on port data */
 	MDIO_Error_state_SetPortValue(DATA_PORT, Copy_u8_Command);
@@ -45,7 +45,7 @@ void HCLCD_Vid_Write_Char_8Bits(u8 Copy_u8_Data)
 {
 	/* select Data register ==> RS = 1 */
 	MDIO_Error_state_SetPinValue(CONTROL_PORT, RS, PIN_HIGH);
-	/* select Write mode ==> Rw = 0 */
+	/* select Write mode ==> RW = 0 */
 	MDIO_Error_state_SetPinValue(CONTROL_PORT, RW, PIN_LOW);
 	/* send Data on port data */
 	MDIO_Error_state_SetPortValue(DATA_PORT, Copy_u8_Data);
