@@ -16,7 +16,7 @@
 #define ENTRY_MODE_DECREASE_WITH_SHIFT		0x05	/* Shrift Right */
 #define ENTRY_MODE_DECREASE					0x04
 
-#define LCD_BEGIN_AT_FIRST_ROW 		0x80	/* 128 */
-#define LCD_BEGIN_AT_SECOND_ROW 	0xc0	/* 192 */
+#define LCD_BEGIN_AT_FIRST_ROW 				0x80	/* 128 */
+#define LCD_BEGIN_AT_SECOND_ROW 			0xC0	/* 192 */
 
 #endif /* HCLCD_PRIVATE_H_ */
