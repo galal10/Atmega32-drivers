@@ -1,6 +1,7 @@
 #ifndef HCLCD_INTERFACE_H_
 #define HCLCD_INTERFACE_H_
 
+#include "../../MCAL/MDIO/MDIO_Interface.h"
 #include "../../LIB/LSTD_TYPES.h"
 
 /* DISPLAY_CLEAR command */
