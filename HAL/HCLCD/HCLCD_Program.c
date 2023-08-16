@@ -19,6 +19,11 @@ void HCLCD_Vid_Write_Command_8Bits(u8 Copy_u8_Command)
 
 void HCLCD_Vid_8Bits_Init(void)
 {
+	/* LCD Data and Control port initialization */
+	MDIO_Error_state_SetPortDirection(DATA_PORT, PORT_OUTPUT);
+	MDIO_Error_state_SetPinDirection(RS, PIN_OUTPUT);
+	MDIO_Error_state_SetPinDirection(RW, PIN_OUTPUT);
+	MDIO_Error_state_SetPinDirection(E, PIN_OUTPUT);
 	/* Wait for more than 30ms */
 	_delay_ms(30);
 	/* send function set command */
