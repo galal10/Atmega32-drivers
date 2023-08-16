@@ -1,5 +1,11 @@
 #ifndef HLED_INTERFACE_H_
 #define HLED_INTERFACE_H_
+typedef struct
+{
+	u8 Copy_u8_Port;
+	u8 Copy_u8_Pin;
+}LED_t;
+
 #define HLED_PORT1		MDIO_PORTA
 #define HLED_PORT2		MDIO_PORTB
 #define HLED_PORT3		MDIO_PORTC
