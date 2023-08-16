@@ -1,4 +1,6 @@
-#include "HCLCD_Interface.h"
+#include "../../MCAL/MDIO/MDIO_Interface.h"
+#include "HCLCD_Private.h"
+#include "HCLCD_Config.h"
 #include <util/delay.h>
 
 void HCLCD_Vid_Write_Command_8Bits(u8 Copy_u8_Command)
