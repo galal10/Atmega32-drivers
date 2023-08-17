@@ -46,6 +46,7 @@ void HCLCD_Vid_8Bits_Init(void)
 	HCLCD_Vid_Write_Command_8Bits(HCLCD_DISPLAY_CLEAR);
 	/* Wait for more than 1.53ms */
 	_delay_ms(2);
+	/* Entry mode Command */
 	HCLCD_Vid_Write_Command_8Bits(HCLCD_ENTRY_MODE);
 }
 
