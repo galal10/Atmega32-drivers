@@ -34,6 +34,8 @@ void HCLCD_Vid_Write_Command_4Bits(u8 Copy_u8_Command)
 
 	/* send 4MSB command on port data */
 	MDIO_Error_state_SetNibbleValues(DATA_PORT, MODE_4BIT_PINS, ((Copy_u8_Command & 0xF0 ) >> DATA_SHIFT) );
+	/* Enable method */
+	HCLCD_Vid_Kick();
 }
 
 void HCLCD_Vid_8Bits_Init(void)
