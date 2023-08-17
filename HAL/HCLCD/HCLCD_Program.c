@@ -49,6 +49,9 @@ void HCLCD_Vid_8Bits_Init(void)
 	HCLCD_Vid_Write_Command_8Bits(HCLCD_ENTRY_MODE);
 }
 
+void HCLCD_Vid_4Bits_Init(void)
+}
+
 void HCLCD_Vid_Write_Char_8Bits(u8 Copy_u8_Data)
 {
 	/* select Data register ==> RS = 1 */
