@@ -29,6 +29,9 @@ void HCLCD_Vid_Write_Command_4Bits(u8 Copy_u8_Command)
 {
 	/* select Command register ==> RS = 0 */
 	MDIO_Error_state_SetPinValue(CONTROL_PORT, RS, PIN_LOW);
+	/* select Write mode ==> RW = 0 */
+	MDIO_Error_state_SetPinValue(CONTROL_PORT, RW, PIN_LOW);
+
 }
 
 void HCLCD_Vid_8Bits_Init(void)
