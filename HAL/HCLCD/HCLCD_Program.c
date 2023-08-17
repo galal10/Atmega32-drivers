@@ -50,6 +50,12 @@ void HCLCD_Vid_8Bits_Init(void)
 }
 
 void HCLCD_Vid_4Bits_Init(void)
+{
+	/* LCD MSB Data and Control port initialization */
+	MDIO_Error_state_SetNibbleDirection(DATA_PORT, MODE_4BIT_PINS, PIN_OUTPUT);
+	MDIO_Error_state_SetPinDirection(CONTROL_PORT, RS, PIN_OUTPUT);
+	MDIO_Error_state_SetPinDirection(CONTROL_PORT, RW, PIN_OUTPUT);
+	MDIO_Error_state_SetPinDirection(CONTROL_PORT, E, PIN_OUTPUT);
 }
 
 void HCLCD_Vid_Write_Char_8Bits(u8 Copy_u8_Data)
