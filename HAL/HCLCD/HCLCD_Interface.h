@@ -30,6 +30,9 @@ void HCLCD_Vid_Write_Number_8Bits(u32 Copy_u32_Number);
 
 void HCLCD_Vid_Write_Number_4Bits(u32 Copy_u32_Number);
 
-void HCLCD_Vid_SetPosition(u8 Copy_u8_LineNumber, u8 Copy_u8_PositionNumber);
+void HCLCD_Vid_SetPosition_8Bits(u8 Copy_u8_LineNumber, u8 Copy_u8_PositionNumber);
+
+void HCLCD_Vid_SetPosition_4Bits(u8 Copy_u8_LineNumber, u8 Copy_u8_PositionNumber);
+
 
 #endif /* HCLCD_INTERFACE_H_ */
