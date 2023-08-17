@@ -12,6 +12,9 @@
 /* Configure Data port ==> (MDIO_PORTA, MDIO_PORTB, MDIO_PORTC, MDIO_PORTD) */
 #define DATA_PORT		MDIO_PORTD
 
+/* Configure 4bit mode Data port pins ==> (PIN_LSB[PIN0, PIN1, PIN2, PIN3], PIN_MSB[PIN4, PIN5, PIN6, PIN7]) */
+#define MODE_4BIT_PINS	PIN_MSB
+
 /* Function set Options 
 *  1- FUNCTION_SET_8BITS_2LINES
 *  2- FUNCTION_SET_8BITS_1LINES
