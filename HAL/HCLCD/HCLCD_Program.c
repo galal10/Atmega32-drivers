@@ -73,7 +73,7 @@ void HCLCD_Vid_Write_Number_8Bits(u32 Copy_u32_Number)
 {
 	u8 ARR_Digits[10];
 	u8 LOC_Count = 0;
-	
+
 	if(Copy_u32_Number)
 	{
 		while(Copy_u32_Number)
@@ -87,7 +87,7 @@ void HCLCD_Vid_Write_Number_8Bits(u32 Copy_u32_Number)
 			HCLCD_Vid_Write_Char_8Bits(ARR_Digits[i]+'0');
 		}
 	}
-	
+
 	else
 	{
 		HCLCD_Vid_Write_Char_8Bits('0');
