@@ -3,6 +3,16 @@
 #include "HCLCD_Config.h"
 #include <util/delay.h>
 
+static void HCLCD_Vid_Kick()
+{
+	/* Send Enable */
+	MDIO_Error_state_SetPinValue(CONTROL_PORT, E, PIN_HIGH);
+	_delay_ms(2);
+	MDIO_Error_state_SetPinValue(CONTROL_PORT, E, PIN_LOW);
+	_delay_ms(2);
+	MDIO_Error_state_SetPinValue(CONTROL_PORT, E, PIN_HIGH);
+}
+
 void HCLCD_Vid_Write_Command_8Bits(u8 Copy_u8_Command)
 {
 	/* select Command register ==> RS = 0 */
@@ -11,12 +21,8 @@ void HCLCD_Vid_Write_Command_8Bits(u8 Copy_u8_Command)
 	MDIO_Error_state_SetPinValue(CONTROL_PORT, RW, PIN_LOW);
 	/* send command on port data */
 	MDIO_Error_state_SetPortValue(DATA_PORT, Copy_u8_Command);
-	/* Send Enable */
-	MDIO_Error_state_SetPinValue(CONTROL_PORT, E, PIN_HIGH);
-	_delay_ms(2);
-	MDIO_Error_state_SetPinValue(CONTROL_PORT, E, PIN_LOW);
-	_delay_ms(2);
-	MDIO_Error_state_SetPinValue(CONTROL_PORT, E, PIN_HIGH);
+	/* Enable method */
+	HCLCD_Vid_Kick();
 }
 
 void HCLCD_Vid_8Bits_Init(void)
@@ -51,12 +57,8 @@ void HCLCD_Vid_Write_Char_8Bits(u8 Copy_u8_Data)
 	MDIO_Error_state_SetPinValue(CONTROL_PORT, RW, PIN_LOW);
 	/* send Data on port data */
 	MDIO_Error_state_SetPortValue(DATA_PORT, Copy_u8_Data);
-	/* Send Enable */
-	MDIO_Error_state_SetPinValue(CONTROL_PORT, E, PIN_HIGH);
-	_delay_ms(2);
-	MDIO_Error_state_SetPinValue(CONTROL_PORT, E, PIN_LOW);
-	_delay_ms(2);
-	MDIO_Error_state_SetPinValue(CONTROL_PORT, E, PIN_HIGH);
+		/* Enable method */
+	HCLCD_Vid_Kick();
 }
 
 void HCLCD_Vid_Write_String_8Bits(u8 *PCopy_u8_String)
