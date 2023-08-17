@@ -70,6 +70,8 @@ void HCLCD_Vid_4Bits_Init(void)
 	HCLCD_Vid_Write_Command_4Bits(HCLCD_DISPLAY_CLEAR);
 	/* Wait for more than 1.53ms */
 	_delay_ms(2);
+	/* Entry mode Command */
+	HCLCD_Vid_Write_Command_4Bits(HCLCD_ENTRY_MODE);
 }
 
 void HCLCD_Vid_Write_Char_8Bits(u8 Copy_u8_Data)
