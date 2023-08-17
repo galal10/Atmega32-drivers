@@ -32,6 +32,13 @@ void HCLCD_Vid_Write_Command_4Bits(u8 Copy_u8_Command)
 	/* select Write mode ==> RW = 0 */
 	MDIO_Error_state_SetPinValue(CONTROL_PORT, RW, PIN_LOW);
 
+	if( (Copy_u8_Command == FUNCTION_SET_4BITS_2LINES) || (Copy_u8_Command== FUNCTION_SET_4BITS_1LINES) )
+	{
+		/* According to data sheet that send the MSB 2 times of Function set 4 bit mode command */
+		MDIO_Error_state_SetNibbleValues(DATA_PORT, MODE_4BIT_PINS, ((Copy_u8_Command & 0xF0 ) >> DATA_SHIFT) );
+		HCLCD_Vid_Kick();
+	}
+
 	/* send 4MSB command on port data */
 	MDIO_Error_state_SetNibbleValues(DATA_PORT, MODE_4BIT_PINS, ((Copy_u8_Command & 0xF0 ) >> DATA_SHIFT) );
 	/* Enable method */
