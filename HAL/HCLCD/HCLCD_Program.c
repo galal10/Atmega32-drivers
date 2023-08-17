@@ -58,6 +58,8 @@ void HCLCD_Vid_4Bits_Init(void)
 	MDIO_Error_state_SetPinDirection(CONTROL_PORT, E, PIN_OUTPUT);
 	/* Wait for more than 30ms */
 	_delay_ms(30);
+	/* send function set command */
+	HCLCD_Vid_Write_Command_4Bits(HCLCD_FUNCTION_SET);
 }
 
 void HCLCD_Vid_Write_Char_8Bits(u8 Copy_u8_Data)
