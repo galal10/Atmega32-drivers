@@ -236,3 +236,21 @@ void HCLCD_Vid_SetPosition_8Bits(u8 Copy_u8_LineNumber, u8 Copy_u8_PositionNumbe
 		/* Do Nothing */
 	}
 }
+
+void HCLCD_Vid_SetPosition_4Bits(u8 Copy_u8_LineNumber, u8 Copy_u8_PositionNumber)
+{
+	if(	(Copy_u8_LineNumber == HCLCD_LINE1) && ( (Copy_u8_PositionNumber >= 0) && ( Copy_u8_PositionNumber < 16) ) )
+	{
+		HCLCD_Vid_Write_Command_4Bits(LCD_BEGIN_AT_FIRST_ROW+Copy_u8_PositionNumber);
+	}
+
+	else if( (Copy_u8_LineNumber == HCLCD_LINE2) && ( (Copy_u8_PositionNumber >= 0) && (Copy_u8_PositionNumber < 16) ) )
+	{
+		HCLCD_Vid_Write_Command_4Bits(LCD_BEGIN_AT_SECOND_ROW+Copy_u8_PositionNumber);
+	}
+
+	else
+	{
+		/* Do Nothing */
+	}
+}
