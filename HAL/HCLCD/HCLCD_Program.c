@@ -117,6 +117,8 @@ void HCLCD_Vid_Write_Char_4Bits(u8 Copy_u8_Data)
 	MDIO_Error_state_SetPinValue(CONTROL_PORT, RS, PIN_HIGH);
 	/* select Write mode ==> RW = 0 */
 	MDIO_Error_state_SetPinValue(CONTROL_PORT, RW, PIN_LOW);
+	/* send 4MSB Data on port data */
+	MDIO_Error_state_SetNibbleValues(DATA_PORT, MODE_4BIT_PINS, ((Copy_u8_Data & 0xF0) >> DATA_SHIFT) );
 }
 
 void HCLCD_Vid_Write_String_8Bits(u8 *PCopy_u8_String)
