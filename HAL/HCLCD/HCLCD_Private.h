@@ -19,4 +19,9 @@
 #define LCD_BEGIN_AT_FIRST_ROW 				0x80	/* 128 */
 #define LCD_BEGIN_AT_SECOND_ROW 			0xC0	/* 192 */
 
+#define LINE1_OFFSET16						16
+#define LINE2_OFFSET32
+
+#define POSITION_0							0
+
 #endif /* HCLCD_PRIVATE_H_ */
