@@ -2,12 +2,12 @@
 #define HCLCD_CONFIG_H_
 
 /* Configure RS,RW,E pins ==> (PIN0 to PIN7) */
-#define RS				PIN0
-#define RW				PIN1
-#define E				PIN2
+#define RS				PIN1
+#define RW				PIN2
+#define E				PIN3
 
 /* Configure Control port ==> (MDIO_PORTA, MDIO_PORTB, MDIO_PORTC, MDIO_PORTD) */
-#define CONTROL_PORT	MDIO_PORTC
+#define CONTROL_PORT	MDIO_PORTD
 
 /* Configure Data port ==> (MDIO_PORTA, MDIO_PORTB, MDIO_PORTC, MDIO_PORTD) */
 #define DATA_PORT		MDIO_PORTD
@@ -18,7 +18,7 @@
 *  3- FUNCTION_SET_4BITS_2LINES
 *  4- FUNCTION_SET_4BITS_1LINES
 */
-#define HCLCD_FUNCTION_SET		FUNCTION_SET_8BITS_2LINES
+#define HCLCD_FUNCTION_SET		FUNCTION_SET_4BITS_2LINES
 
 /* Display ON/OFF command Options 
 *  1- DISPLAY_ON_CURSOR_ON_BLINKING_ON
