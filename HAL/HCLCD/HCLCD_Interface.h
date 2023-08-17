@@ -7,6 +7,9 @@
 /* DISPLAY_CLEAR command */
 #define HCLCD_DISPLAY_CLEAR		0x01
 
+#define HCLCD_LINE1				1
+#define HCLCD_LINE2				2
+
 void HCLCD_Vid_8Bits_Init(void);
 
 void HCLCD_Vid_4Bits_Init(void);
