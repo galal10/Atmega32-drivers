@@ -24,4 +24,6 @@
 
 #define POSITION_0							0
 
+#define DATA_SHIFT							4
+
 #endif /* HCLCD_PRIVATE_H_ */
