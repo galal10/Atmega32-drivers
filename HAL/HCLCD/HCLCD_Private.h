@@ -20,7 +20,7 @@
 #define LCD_BEGIN_AT_SECOND_ROW 			0xC0	/* 192 */
 
 #define LINE1_OFFSET16						16
-#define LINE2_OFFSET32
+#define LINE2_OFFSET32						32
 
 #define POSITION_0							0
 
