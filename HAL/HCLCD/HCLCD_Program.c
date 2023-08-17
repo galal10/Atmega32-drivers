@@ -111,6 +111,10 @@ void HCLCD_Vid_Write_Char_8Bits(u8 Copy_u8_Data)
 	HCLCD_Vid_Kick();
 }
 
+void HCLCD_Vid_Write_Char_4Bits(u8 Copy_u8_Data)
+{
+}
+
 void HCLCD_Vid_Write_String_8Bits(u8 *PCopy_u8_String)
 {
 	u8 Loc_u8_count = 0;
