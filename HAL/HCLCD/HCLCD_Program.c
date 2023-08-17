@@ -66,6 +66,17 @@ void HCLCD_Vid_Write_String_8Bits(u8 *PCopy_u8_String)
 	{
 		HCLCD_Vid_Write_Char_8Bits(*PCopy_u8_String++);
 		Loc_u8_count++;
+		
+		if(Loc_u8_count == LINE1_OFFSET16) /* end offset of line 1 */
+		{
+			HCLCD_Vid_SetPosition(HCLCD_LINE2, POSITION_0);
+		}
+		else if(Loc_u8_count == LINE2_OFFSET32) /* end offset of line 2 */
+		{
+			HCLCD_Vid_Write_Command_8Bits(HCLCD_DISPLAY_CLEAR);
+			HCLCD_Vid_SetPosition(HCLCD_LINE1, POSITION_0);
+			Loc_u8_count = 0;
+		}
 	}
 }
 
