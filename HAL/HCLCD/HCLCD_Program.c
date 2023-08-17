@@ -68,6 +68,8 @@ void HCLCD_Vid_4Bits_Init(void)
 	_delay_ms(1);
 	/* Display Clear command */
 	HCLCD_Vid_Write_Command_4Bits(HCLCD_DISPLAY_CLEAR);
+	/* Wait for more than 1.53ms */
+	_delay_ms(2);
 }
 
 void HCLCD_Vid_Write_Char_8Bits(u8 Copy_u8_Data)
