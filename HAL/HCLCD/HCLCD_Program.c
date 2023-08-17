@@ -194,7 +194,32 @@ void HCLCD_Vid_Write_Number_8Bits(u32 Copy_u32_Number)
 	}
 }
 
-void HCLCD_Vid_SetPosition(u8 Copy_u8_LineNumber, u8 Copy_u8_PositionNumber)
+void HCLCD_Vid_Write_Number_4Bits(u32 Copy_u32_Number)
+{
+	u8 ARR_Digits[10];
+	u8 LOC_Count = 0;
+
+	if(Copy_u32_Number)
+	{
+		while(Copy_u32_Number)
+		{
+			ARR_Digits[LOC_Count] = Copy_u32_Number%10;
+			Copy_u32_Number /= 10;
+			LOC_Count++;
+		}
+		for(s8 i = LOC_Count-1; i >= 0; i--)
+		{
+			HCLCD_Vid_Write_Char_4Bits(ARR_Digits[i]+'0');
+		}
+	}
+
+	else
+	{
+		HCLCD_Vid_Write_Char_4Bits('0');
+	}
+}
+
+void HCLCD_Vid_SetPosition_8Bits(u8 Copy_u8_LineNumber, u8 Copy_u8_PositionNumber)
 {
 	if(	(Copy_u8_LineNumber == HCLCD_LINE1) && ( (Copy_u8_PositionNumber >= 0) && ( Copy_u8_PositionNumber < 16) ) )
 	{
