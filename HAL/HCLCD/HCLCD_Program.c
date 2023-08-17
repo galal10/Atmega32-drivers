@@ -60,6 +60,8 @@ void HCLCD_Vid_4Bits_Init(void)
 	_delay_ms(30);
 	/* send function set command */
 	HCLCD_Vid_Write_Command_4Bits(HCLCD_FUNCTION_SET);
+	/* wait 39 µs */
+	_delay_ms(1);
 }
 
 void HCLCD_Vid_Write_Char_8Bits(u8 Copy_u8_Data)
