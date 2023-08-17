@@ -25,6 +25,10 @@ void HCLCD_Vid_Write_Command_8Bits(u8 Copy_u8_Command)
 	HCLCD_Vid_Kick();
 }
 
+void HCLCD_Vid_Write_Command_4Bits(u8 Copy_u8_Command)
+{
+}
+
 void HCLCD_Vid_8Bits_Init(void)
 {
 	/* LCD Data and Control port initialization */
