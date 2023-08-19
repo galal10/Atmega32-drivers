@@ -53,4 +53,9 @@ u8 HKPD_u8_GetKeyPressed(void)
 				{
 					MDIO_Error_state_GetPinValue(ROW_PORT, LOC_u8_RowCount, &LOC_u8_PinState);
 				}
+				/* delay to avoid bouncing */
+				_delay_ms(10);
+			}
+		}
+	}
 }
