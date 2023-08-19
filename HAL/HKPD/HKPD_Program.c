@@ -1,3 +1,12 @@
+const u8 KPD_u8_SwitchVal[4][4] =
+{
+		{'7', '4', '1', 'C'},
+		{'8', '5', '2', '0'},
+		{'9', '6', '3', '='},
+		{'/', '*', '-', '+'}
+};
+
+/* KPD init */
 void HKPD_Vid_init(void)
 {
 	/* set Row pins as an input */
