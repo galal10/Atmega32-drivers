@@ -1,5 +1,9 @@
 #ifndef HKPD_INTERFACE_H_
 #define HKPD_INTERFACE_H_
+
+
+#define NOT_PRESSED		255
+
 /* KPD init */
 void HKPD_Vid_init(void);
 
