@@ -42,4 +42,8 @@ u8 HKPD_u8_GetKeyPressed(void)
 		/* loop to read all row pins */
 		for( LOC_u8_RowCount = ROW_INIT; LOC_u8_RowCount < ROW_END; LOC_u8_RowCount++ )
 		{
+			/* check the status of switch */
+			MDIO_Error_state_GetPinValue(ROW_PORT, LOC_u8_RowCount, &LOC_u8_PinState);
+			if( LOC_u8_PinState == PIN_LOW )
+			{
 }
