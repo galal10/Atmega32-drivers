@@ -56,6 +56,11 @@ u8 HKPD_u8_GetKeyPressed(void)
 				/* delay to avoid bouncing */
 				_delay_ms(10);
 			}
+
+			else
+			{
+				/* Do Nothing */
+			}
 		}
 	}
 }
