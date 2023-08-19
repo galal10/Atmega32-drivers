@@ -62,5 +62,8 @@ u8 HKPD_u8_GetKeyPressed(void)
 				/* Do Nothing */
 			}
 		}
+		/* deactivate the column */
+		MDIO_Error_state_SetPinValue(COL_PORT, LOC_u8_ColCount, PIN_HIGH);
 	}
+
 }
