@@ -1,0 +1,3 @@
+#ifndef HKPD_INTERFACE_H_
+#define HKPD_INTERFACE_H_
+#endif /* HKPD_INTERFACE_H_ */
