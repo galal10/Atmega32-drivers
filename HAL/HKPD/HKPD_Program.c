@@ -66,4 +66,5 @@ u8 HKPD_u8_GetKeyPressed(void)
 		MDIO_Error_state_SetPinValue(COL_PORT, LOC_u8_ColCount, PIN_HIGH);
 	}
 
+	return LOC_u8_RrturnValue;
 }
