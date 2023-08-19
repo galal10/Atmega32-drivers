@@ -39,4 +39,7 @@ u8 HKPD_u8_GetKeyPressed(void)
 	{
 		/* select Column */
 		MDIO_Error_state_SetPinValue(COL_PORT, LOC_u8_ColCount, PIN_LOW);
+		/* loop to read all row pins */
+		for( LOC_u8_RowCount = ROW_INIT; LOC_u8_RowCount < ROW_END; LOC_u8_RowCount++ )
+		{
 }
