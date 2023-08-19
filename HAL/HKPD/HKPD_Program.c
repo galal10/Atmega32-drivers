@@ -33,4 +33,7 @@ u8 HKPD_u8_GetKeyPressed(void)
 	/* initialize the switch status to NOT PRESSED */
 	u8 LOC_u8_RrturnValue = NOT_PRESSED;
 	u8 LOC_u8_PinState ;
+
+	/* looping on columns of the keypad */
+	for( LOC_u8_ColCount = COL_INIT; LOC_u8_ColCount < COL_END; LOC_u8_ColCount++ )
 }
