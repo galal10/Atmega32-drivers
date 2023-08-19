@@ -5,3 +5,9 @@
  * 4- MDIO_PORTD
  * */
 #define ROW_PORT		MDIO_PORTB
+/*Row Pins Options : from PIN0 to PIN7*/
+#define ROW_PIN0		PIN0
+#define ROW_PIN1		PIN1
+#define ROW_PIN2		PIN2
+#define ROW_PIN3		PIN3
+
