@@ -1,3 +1,6 @@
+#ifndef HKPD_CONFIG_H_
+#define HKPD_CONFIG_H_
+
 /* Row Port Options
  * 1- MDIO_PORTA
  * 2- MDIO_PORTB
@@ -32,3 +35,4 @@
 #define ROW_INIT		0
 #define ROW_END			4
 
+#endif /* HKPD_CONFIG_H_ */
