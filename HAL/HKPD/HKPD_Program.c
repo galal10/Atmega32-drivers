@@ -25,6 +25,9 @@ void HKPD_Vid_init(void)
 	MDIO_Error_state_SetPinValue(COL_PORT, COL_PIN3, PIN_HIGH);
 }
 
+/* KPD Get pressed */
 u8 HKPD_u8_GetKeyPressed(void)
 {
+	u8 LOC_u8_RowCount;
+	u8 LOC_u8_ColCount;
 }
