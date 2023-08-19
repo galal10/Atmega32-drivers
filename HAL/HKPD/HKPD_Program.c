@@ -12,6 +12,12 @@ void HKPD_Vid_init(void)
 	MDIO_Error_state_SetPinDirection(COL_PORT, COL_PIN2, PIN_OUTPUT);
 	MDIO_Error_state_SetPinDirection(COL_PORT, COL_PIN3, PIN_OUTPUT);
 
+	/* Activate pull up resistor for row pins */
+	MDIO_Error_state_SetPinValue(ROW_PORT, ROW_PIN0, PIN_HIGH);
+	MDIO_Error_state_SetPinValue(ROW_PORT, ROW_PIN1, PIN_HIGH);
+	MDIO_Error_state_SetPinValue(ROW_PORT, ROW_PIN2, PIN_HIGH);
+	MDIO_Error_state_SetPinValue(ROW_PORT, ROW_PIN3, PIN_HIGH);
+
 }
 
 u8 HKPD_u8_GetKeyPressed(void)
