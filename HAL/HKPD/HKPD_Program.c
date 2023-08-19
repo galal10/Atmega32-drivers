@@ -36,4 +36,6 @@ u8 HKPD_u8_GetKeyPressed(void)
 
 	/* looping on columns of the keypad */
 	for( LOC_u8_ColCount = COL_INIT; LOC_u8_ColCount < COL_END; LOC_u8_ColCount++ )
+	{
+		/* select Column */
 }
