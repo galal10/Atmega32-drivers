@@ -24,3 +24,7 @@
 #define COL_PIN2		PIN6
 #define COL_PIN3		PIN7
 
+/* COL INIT is start Col pin and COL END is last Col pin+1 */
+#define COL_INIT		4
+#define COL_END			8
+
