@@ -46,4 +46,6 @@ u8 HKPD_u8_GetKeyPressed(void)
 			MDIO_Error_state_GetPinValue(ROW_PORT, LOC_u8_RowCount, &LOC_u8_PinState);
 			if( LOC_u8_PinState == PIN_LOW )
 			{
+				/* get the value of the current pressed switch */
+				LOC_u8_RrturnValue = KPD_u8_SwitchVal[LOC_u8_ColCount-COL_INIT][LOC_u8_RowCount-ROW_INIT];
 }
