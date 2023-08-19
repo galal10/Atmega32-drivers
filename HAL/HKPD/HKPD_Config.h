@@ -11,3 +11,10 @@
 #define ROW_PIN2		PIN2
 #define ROW_PIN3		PIN3
 
+/* Col Port Options
+ * 1- MDIO_PORTA
+ * 2- MDIO_PORTB
+ * 3- MDIO_PORTC
+ * 4- MDIO_PORTD
+ * */
+#define COL_PORT		MDIO_PORTB
