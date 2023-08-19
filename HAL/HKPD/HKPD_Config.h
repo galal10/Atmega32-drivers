@@ -28,3 +28,7 @@
 #define COL_INIT		4
 #define COL_END			8
 
+/* ROW INIT is start Row pin and ROW END is last Row pin+1 */
+#define ROW_INIT		0
+#define ROW_END			4
+
