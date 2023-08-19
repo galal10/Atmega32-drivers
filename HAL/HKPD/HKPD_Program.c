@@ -1,3 +1,10 @@
+#include "../../LIB/LSTD_TYPES.h"
+#include "../../MCAL/MDIO/MDIO_Interface.h"
+#include "HKPD_Interface.h"
+#include "HKPD_Config.h"
+#include <util/delay.h>
+
+
 const u8 KPD_u8_SwitchVal[4][4] =
 {
 		{'7', '4', '1', 'C'},
