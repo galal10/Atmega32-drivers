@@ -54,6 +54,9 @@ void MEXTI1_Vid_Init(void)
 	SET_BIT(GICR, INT1);
 }
 
+/* EXTI2 Initialization */
+void MEXTI2_Vid_Init(void)
+{
 }
 
 }
