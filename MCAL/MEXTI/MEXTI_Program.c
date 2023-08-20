@@ -124,4 +124,6 @@ Error_state MEXTI_Vid_SenseControl(u8 Copy_u8_EXTI_ID, MEXTI_SENSE_CONTROL_t Cop
 		LOC_Error_state_ReturnState = NOK;
 		break;
 	}
+
+	return LOC_Error_state_ReturnState;
 }
