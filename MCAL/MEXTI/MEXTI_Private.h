@@ -23,4 +23,10 @@
 #define INT1							7
 #define INT2							5
 
+/* Sense Control Macros */
+#define MEXTI_LOW_LEVEL					0x00
+#define MEXTI_ANY_LOGICAL_CHANGE		0x01
+#define MEXTI_FALLING_EDGE				0x02
+#define MEXTI_RISING_EDGE				0x03
+
 #endif /* MEXTI_PRIVATE_H_ */
