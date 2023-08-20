@@ -10,4 +10,6 @@
 #define ISC11							3
 
 
+/* Control Status Register : MCUCSR */
+#define MCUCSR		*((volatile u8*)(0x54))
 #endif /* MEXTI_PRIVATE_H_ */
