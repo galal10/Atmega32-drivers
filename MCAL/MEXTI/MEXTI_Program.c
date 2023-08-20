@@ -78,4 +78,6 @@ void MEXTI2_Vid_Init(void)
 	SET_BIT(GICR, INT2);
 }
 
+/* Select Sense control Register */
+Error_state MEXTI_Vid_SenseControl(u8 Copy_u8_EXTI_ID, MEXTI_SENSE_CONTROL_t Copy_SenseControl)
 }
