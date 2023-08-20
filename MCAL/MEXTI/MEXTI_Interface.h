@@ -1,6 +1,14 @@
 #ifndef MEXTI_INTERFACE_H_
 #define MEXTI_INTERFACE_H_
 
+typedef enum
+{
+	LOW_LEVEL = 0,
+	ANY_LOGICAL_CHANGE,
+	FALLING_EDGE,
+	RISING_EDGE
+}MEXTI_SENSE_CONTROL_t;
+
 /* EXTI0 Initialization */
 void MEXTI0_Vid_Init(void);
 
