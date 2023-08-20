@@ -1,3 +1,9 @@
+#include "../../LIB/LBITS.h"
+#include "../../LIB/LSTD_TYPES.h"
+#include "MEXTI_Config.h"
+#include "MEXTI_Private.h"
+#include "MEXTI_Interface.h"
+
 /* EXTI0 Initialization */
 void MEXTI0_Vid_Init(void)
 {
