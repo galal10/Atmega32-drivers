@@ -82,4 +82,9 @@ void MEXTI2_Vid_Init(void)
 Error_state MEXTI_Vid_SenseControl(u8 Copy_u8_EXTI_ID, MEXTI_SENSE_CONTROL_t Copy_SenseControl)
 {
 	Error_state LOC_Error_state_ReturnState = OK;
+	switch(Copy_u8_EXTI_ID)
+	{
+	case EXTI0:
+	case EXTI1:
+	case EXTI2:
 }
