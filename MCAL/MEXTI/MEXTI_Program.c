@@ -21,4 +21,8 @@ void MEXTI0_Vid_Init(void)
 		#error"Sense Control Option is not Valid"
 
 	#endif
+
+	/* Enable EXTI0 in GICR */
+	SET_BIT(GICR, INT0);
+}
 }
