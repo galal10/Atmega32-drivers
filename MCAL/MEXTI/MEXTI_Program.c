@@ -57,6 +57,9 @@ void MEXTI1_Vid_Init(void)
 /* EXTI2 Initialization */
 void MEXTI2_Vid_Init(void)
 {
+	#if MEXTI2_SET_SENSE_CONTROL == MEXTI_FALLING_EDGE
+		CLR_BIT(MCUCSR, ISC2);
+
 }
 
 }
