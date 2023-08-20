@@ -25,4 +25,10 @@ void MEXTI0_Vid_Init(void)
 	/* Enable EXTI0 in GICR */
 	SET_BIT(GICR, INT0);
 }
+
+/* EXTI1 Initialization */
+void MEXTI1_Vid_Init(void)
+{
+}
+
 }
