@@ -100,5 +100,11 @@ Error_state MEXTI_Vid_SenseControl(u8 Copy_u8_EXTI_ID, MEXTI_SENSE_CONTROL_t Cop
 		if( (Copy_SenseControl >= LOW_LEVEL) && (Copy_SenseControl <= RISING_EDGE) )
 		{
 		}
+		else
+		{
+			LOC_Error_state_ReturnState = NOK;
+		}
+		break;
+
 	case EXTI2:
 }
