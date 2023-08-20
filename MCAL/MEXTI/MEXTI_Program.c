@@ -99,6 +99,8 @@ Error_state MEXTI_Vid_SenseControl(u8 Copy_u8_EXTI_ID, MEXTI_SENSE_CONTROL_t Cop
 	case EXTI1:
 		if( (Copy_SenseControl >= LOW_LEVEL) && (Copy_SenseControl <= RISING_EDGE) )
 		{
+			/* 0xF3 = 0b11110011 */
+			MCUCR = (MCUCR & 0xF3) | (Copy_SenseControl<<ISC10);
 		}
 		else
 		{
