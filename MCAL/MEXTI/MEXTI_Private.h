@@ -15,4 +15,7 @@
 /* MCUCSR bits */
 #define ISC2							6
 
+
+/* General Interrupt Control Register : GICR */
+#define GICR		*((volatile u8*)(0x5B))
 #endif /* MEXTI_PRIVATE_H_ */
