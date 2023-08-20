@@ -111,6 +111,8 @@ Error_state MEXTI_Vid_SenseControl(u8 Copy_u8_EXTI_ID, MEXTI_SENSE_CONTROL_t Cop
 	case EXTI2:
 		if( (Copy_SenseControl == FALLING_EDGE) || (Copy_SenseControl == RISING_EDGE))
 		{
+			/* 0xBF = 0b10111111 */
+			MCUCSR = (MCUCSR & 0xBF) | ((Copy_SenseControl-2)<<ISC2);
 		}
 		else
 		{
