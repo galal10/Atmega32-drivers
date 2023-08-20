@@ -29,6 +29,10 @@ void MEXTI0_Vid_Init(void)
 /* EXTI1 Initialization */
 void MEXTI1_Vid_Init(void)
 {
+	#if MEXTI1_SET_SENSE_CONTROL == MEXTI_LOW_LEVEL
+		CLR_BIT(MCUCR, ISC10);
+		CLR_BIT(MCUCR, ISC11);
+
 }
 
 }
