@@ -1,6 +1,10 @@
 #ifndef MEXTI_INTERFACE_H_
 #define MEXTI_INTERFACE_H_
 
+#define EXTI0			0
+#define EXTI1			1
+#define EXTI2			2
+
 typedef enum
 {
 	LOW_LEVEL = 0,
