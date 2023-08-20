@@ -63,6 +63,10 @@ void MEXTI2_Vid_Init(void)
 	#elif MEXTI2_SET_SENSE_CONTROL == MEXTI_RISING_EDGE
 		SET_BIT(MCUCSR, ISC2);
 
+	#else
+		#error"Sense Control Option is not Valid"
+
+	#endif
 }
 
 }
