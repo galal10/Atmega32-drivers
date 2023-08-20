@@ -50,6 +50,10 @@ void MEXTI1_Vid_Init(void)
 
 	#endif
 
+	/* Enable EXTI1 in GICR */
+	SET_BIT(GICR, INT1);
+}
+
 }
 
 }
