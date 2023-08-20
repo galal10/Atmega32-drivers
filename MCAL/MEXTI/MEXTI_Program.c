@@ -90,6 +90,12 @@ Error_state MEXTI_Vid_SenseControl(u8 Copy_u8_EXTI_ID, MEXTI_SENSE_CONTROL_t Cop
 			/* 0xFC = 0b11111100 */
 			MCUCR = (MCUCR & 0xFC ) | (Copy_SenseControl<<ISC00);
 		}
+		else
+		{
+			LOC_Error_state_ReturnState = NOK;
+		}
+		break;
+
 	case EXTI1:
 	case EXTI2:
 }
