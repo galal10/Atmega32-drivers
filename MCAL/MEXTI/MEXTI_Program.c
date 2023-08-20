@@ -45,6 +45,11 @@ void MEXTI1_Vid_Init(void)
 		SET_BIT(MCUCR, ISC10);
 		CLR_BIT(MCUCR, ISC11);
 
+	#else
+		#error"Sense Control Option is not Valid"
+
+	#endif
+
 }
 
 }
