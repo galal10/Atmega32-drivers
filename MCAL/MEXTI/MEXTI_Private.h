@@ -12,4 +12,7 @@
 
 /* Control Status Register : MCUCSR */
 #define MCUCSR		*((volatile u8*)(0x54))
+/* MCUCSR bits */
+#define ISC2							6
+
 #endif /* MEXTI_PRIVATE_H_ */
