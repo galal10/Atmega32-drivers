@@ -18,4 +18,9 @@
 
 /* General Interrupt Control Register : GICR */
 #define GICR		*((volatile u8*)(0x5B))
+/* GICR bits */
+#define INT0							6
+#define INT1							7
+#define INT2							5
+
 #endif /* MEXTI_PRIVATE_H_ */
