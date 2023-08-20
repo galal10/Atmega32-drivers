@@ -85,6 +85,9 @@ Error_state MEXTI_Vid_SenseControl(u8 Copy_u8_EXTI_ID, MEXTI_SENSE_CONTROL_t Cop
 	switch(Copy_u8_EXTI_ID)
 	{
 	case EXTI0:
+		if( (Copy_SenseControl >= LOW_LEVEL) && (Copy_SenseControl <= RISING_EDGE) )
+		{
+		}
 	case EXTI1:
 	case EXTI2:
 }
