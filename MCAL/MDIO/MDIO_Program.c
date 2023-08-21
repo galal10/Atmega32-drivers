@@ -51,83 +51,28 @@ Error_state MDIO_Error_state_SetPortDirection(u8 Copy_u8_PortNumber, u8 Copy_u8_
 Error_state MDIO_Error_state_SetPinValue(u8 Copy_u8_PortNumber, u8 Copy_u8_PinNumber, u8 Copy_u8_PinValue)
 {
 	Error_state LOC_Error_state_ReturnState = OK;
-	
-	if( (Copy_u8_PinNumber >= PIN0) && (Copy_u8_PinNumber <= PIN7) )
+
+	if( ((Copy_u8_PinNumber >= PIN0) && (Copy_u8_PinNumber <= PIN7)) && ((Copy_u8_PortNumber >= MDIO_PORTA) && (Copy_u8_PortNumber <= MDIO_PORTD)) )
 	{
-	
-		switch( Copy_u8_PortNumber )
+		if( Copy_u8_PinValue == PIN_HIGH )
 		{
-			case MDIO_PORTA:
-				if( Copy_u8_PinValue == PIN_HIGH )
-				{
-					SET_BIT(PORTA, Copy_u8_PinNumber);
-				}
-				else if( Copy_u8_PinValue == PIN_LOW )
-				{
-					CLR_BIT(PORTA, Copy_u8_PinNumber);
-				}
-				else
-				{
-					LOC_Error_state_ReturnState = NOK;
-				}
-				break;
-				
-			case MDIO_PORTB:
-				if( Copy_u8_PinValue == PIN_HIGH )
-				{
-					SET_BIT(PORTB, Copy_u8_PinNumber);
-				}
-				else if( Copy_u8_PinValue == PIN_LOW )
-				{
-					CLR_BIT(PORTB, Copy_u8_PinNumber);
-				}
-				else
-				{
-					LOC_Error_state_ReturnState = NOK;
-				}
-				break;
-				
-			case MDIO_PORTC:
-				if( Copy_u8_PinValue == PIN_HIGH )
-				{
-					SET_BIT(PORTC, Copy_u8_PinNumber);
-				}
-				else if( Copy_u8_PinValue == PIN_LOW )
-				{
-					CLR_BIT(PORTC, Copy_u8_PinNumber);
-				}
-				else
-				{
-					LOC_Error_state_ReturnState = NOK;
-				}
-				break;
-				
-			case MDIO_PORTD:
-				if( Copy_u8_PinValue == PIN_HIGH )
-				{
-					SET_BIT(PORTD, Copy_u8_PinNumber);
-				}
-				else if( Copy_u8_PinValue == PIN_LOW )
-				{
-					CLR_BIT(PORTD, Copy_u8_PinNumber);
-				}
-				else
-				{
-					LOC_Error_state_ReturnState = NOK;
-				}
-				break;
-				
-			default:
-				LOC_Error_state_ReturnState = NOK;
-				break;
+			SET_BIT(*PORT[Copy_u8_PortNumber], Copy_u8_PinNumber);
+		}
+		else if( Copy_u8_PinValue == PIN_LOW )
+		{
+			CLR_BIT(*PORT[Copy_u8_PortNumber], Copy_u8_PinNumber);
+		}
+		else
+		{
+			LOC_Error_state_ReturnState = NOK;
 		}
 	}
-	
+
 	else
 	{
 		LOC_Error_state_ReturnState = NOK;
 	}
-	
+
 	return LOC_Error_state_ReturnState;
 }
 
