@@ -34,38 +34,17 @@ Error_state MDIO_Error_state_SetPinDirection(u8 Copy_u8_PortNumber, u8 Copy_u8_P
 Error_state MDIO_Error_state_SetPortDirection(u8 Copy_u8_PortNumber, u8 Copy_u8_PortDirection)
 {
 	Error_state LOC_Error_state_ReturnState = OK;
-	
-	if( (Copy_u8_PortDirection == PORT_INPUT) || (Copy_u8_PortDirection == PORT_OUTPUT) )
-	{
-		switch( Copy_u8_PortNumber )
-		{
-			case MDIO_PORTA:
-				DDRA = Copy_u8_PortDirection;
-				break;
 
-			case MDIO_PORTB:
-				DDRB = Copy_u8_PortDirection;
-				break;
-				
-			case MDIO_PORTC:
-				DDRC = Copy_u8_PortDirection;
-				break;
-				
-			case MDIO_PORTD:
-				DDRD = Copy_u8_PortDirection;
-				break;
-				
-			default:
-				LOC_Error_state_ReturnState = NOK;
-				break;
-		}
+	if( ((Copy_u8_PortDirection == PORT_INPUT) || (Copy_u8_PortDirection == PORT_OUTPUT)) && ((Copy_u8_PortNumber >= MDIO_PORTA) && (Copy_u8_PortNumber <= MDIO_PORTD)) )
+	{
+		*DDR[Copy_u8_PortNumber] = Copy_u8_PortDirection;
 	}
-	
+
 	else
 	{
 		LOC_Error_state_ReturnState = NOK;
 	}
-	
+
 	return LOC_Error_state_ReturnState;
 }
 
