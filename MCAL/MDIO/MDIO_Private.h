@@ -17,4 +17,9 @@
 #define DDRD	((volatile u8*)(0x31))
 #define PIND	((volatile u8*)(0x30))
 
+
+static u8 volatile * const PORT[] = {PORTA, PORTB, PORTC, PORTD};
+static u8 volatile * const DDR[]  = {DDRA, DDRB, DDRC, DDRD};
+static u8 volatile * const PIN[]  = {PINA, PINB, PINC, PIND};
+
 #endif /* MDIO_PRIVATE_H_ */
