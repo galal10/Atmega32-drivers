@@ -1,4 +1,5 @@
 #include "../../LIB/LBITS.h"
+#include "../../LIB/LSTD_TYPES.h"
 #include "MGIE_Private.h"
 
 /*GIE Enable Function*/
