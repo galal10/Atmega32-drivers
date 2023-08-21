@@ -113,38 +113,17 @@ Error_state MDIO_Error_state_GetPinValue(u8 Copy_u8_PortNumber, u8 Copy_u8_PinNu
 Error_state MDIO_Error_state_TogglePinValue(u8 Copy_u8_PortNumber, u8 Copy_u8_PinNumber)
 {
 	Error_state LOC_Error_state_ReturnState = OK;
-	
-	if( (Copy_u8_PinNumber >= PIN0) && (Copy_u8_PinNumber <= PIN7) )
+
+	if( ((Copy_u8_PinNumber >= PIN0) && (Copy_u8_PinNumber <= PIN7)) && ((Copy_u8_PortNumber >= MDIO_PORTA) && (Copy_u8_PortNumber <= MDIO_PORTD)) )
 	{
-		switch( Copy_u8_PortNumber )
-		{
-			case MDIO_PORTA:
-				TOGGLE_BIT(PORTA, Copy_u8_PinNumber);
-				break;
-				
-			case MDIO_PORTB:
-				TOGGLE_BIT(PORTB, Copy_u8_PinNumber);
-				break;
-
-			case MDIO_PORTC:
-				TOGGLE_BIT(PORTC, Copy_u8_PinNumber);
-				break;
-
-			case MDIO_PORTD:
-				TOGGLE_BIT(PORTD, Copy_u8_PinNumber);
-				break;
-
-			default:
-				LOC_Error_state_ReturnState = NOK;
-				break;
-		}
+		TOGGLE_BIT(*PORT[Copy_u8_PortNumber], Copy_u8_PinNumber);
 	}
-	
+
 	else
 	{
 		LOC_Error_state_ReturnState = NOK;
 	}
-	
+
 	return LOC_Error_state_ReturnState;
 }
 
