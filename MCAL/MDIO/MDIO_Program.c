@@ -147,164 +147,43 @@ Error_state MDIO_Error_state_ActivatePullUpResistor(u8 Copy_u8_PortNumber, u8 Co
 Error_state MDIO_Error_state_SetNibbleDirection(u8 Copy_u8_PortNumber, u8 Copy_u8_PinPos, u8 Copy_u8_PinDirection)
 {
 	Error_state LOC_Error_state_ReturnState = OK;
-	
-	if( Copy_u8_PinPos == PIN_LSB )
+
+	if( (Copy_u8_PinPos == PIN_LSB) && ((Copy_u8_PortNumber >= MDIO_PORTA) && (Copy_u8_PortNumber <= MDIO_PORTD)) )
 	{
-		switch( Copy_u8_PortNumber )
+		if( Copy_u8_PinDirection == PIN_OUTPUT )
 		{
-			case MDIO_PORTA:
-				if( Copy_u8_PinDirection == PIN_OUTPUT )
-				{
-					DDRA = ( (DDRA & 0xF0) | (0x0F) );
-				}
-				
-				else if( Copy_u8_PinDirection == PIN_INPUT )
-				{
-					DDRA = ( (DDRA & 0xF0) | (0x00) );
-				}
-				
-				else
-				{
-					LOC_Error_state_ReturnState = NOK;
-				}
-				break;
+			*DDR[Copy_u8_PortNumber] = ( (*DDR[Copy_u8_PortNumber] & 0xF0) | (0x0F) );
+		}
 
-			case MDIO_PORTB:
-				if( Copy_u8_PinDirection == PIN_OUTPUT )
-				{
-					DDRB = ( (DDRB & 0xF0) | (0x0F) );
-				}
-				
-				else if( Copy_u8_PinDirection == PIN_INPUT )
-				{
-					DDRB = ( (DDRB & 0xF0) | (0x00) );
-				}
-				
-				else
-				{
-					LOC_Error_state_ReturnState = NOK;
-				}
-				break;
+		else if( Copy_u8_PinDirection == PIN_INPUT )
+		{
+			*DDR[Copy_u8_PortNumber] = ( (*DDR[Copy_u8_PortNumber] & 0xF0) | (0x00) );
+		}
 
-			case MDIO_PORTC:
-				if( Copy_u8_PinDirection == PIN_OUTPUT )
-				{
-					DDRC = ( (DDRC & 0xF0) | (0x0F) );
-				}
-				
-				else if( Copy_u8_PinDirection == PIN_INPUT )
-				{
-					DDRC = ( (DDRC & 0xF0) | (0x00) );
-				}
-				
-				else
-				{
-					LOC_Error_state_ReturnState = NOK;
-				}
-				break;
-
-			case MDIO_PORTD:
-				if( Copy_u8_PinDirection == PIN_OUTPUT )
-				{
-					DDRD = ( (DDRD & 0xF0) | (0x0F) );
-				}
-				
-				else if( Copy_u8_PinDirection == PIN_INPUT )
-				{
-					DDRD = ( (DDRD & 0xF0) | (0x00) );
-				}
-				
-				else
-				{
-					LOC_Error_state_ReturnState = NOK;
-				}
-				break;
-			
-			default:
-				LOC_Error_state_ReturnState = NOK;
-				break;
+		else
+		{
+			LOC_Error_state_ReturnState = NOK;
 		}
 	}
 
-	else if( Copy_u8_PinPos == PIN_MSB )
+	else if( (Copy_u8_PinPos == PIN_MSB) && ((Copy_u8_PortNumber >= MDIO_PORTA) && (Copy_u8_PortNumber <= MDIO_PORTD)) )
 	{
-		switch( Copy_u8_PortNumber )
+		if( Copy_u8_PinDirection == PIN_OUTPUT )
 		{
-			case MDIO_PORTA:
-				if( Copy_u8_PinDirection == PIN_OUTPUT )
-				{
-					DDRA = ( (0xF0) | ( DDRA & 0x0F) );
-				}
-				
-				else if( Copy_u8_PinDirection == PIN_INPUT )
-				{
-					DDRA = ( (0x00) | ( DDRA & 0x0F) );
-				}
-				
-				else
-				{
-					LOC_Error_state_ReturnState = NOK;
-				}
-				break;
+			*DDR[Copy_u8_PortNumber] = ( (0xF0) | ( *DDR[Copy_u8_PortNumber] & 0x0F) );
+		}
 
-			case MDIO_PORTB:
-				if( Copy_u8_PinDirection == PIN_OUTPUT )
-				{
-					DDRB = ( (0xF0) | ( DDRB & 0x0F) );
-				}
-				
-				else if( Copy_u8_PinDirection == PIN_INPUT )
-				{
-					DDRB = ( (0x00) | ( DDRB & 0x0F) );
-				}
-				
-				else
-				{
-					LOC_Error_state_ReturnState = NOK;
-				}
-				break;
+		else if( Copy_u8_PinDirection == PIN_INPUT )
+		{
+			*DDR[Copy_u8_PortNumber] = ( (0x00) | ( *DDR[Copy_u8_PortNumber] & 0x0F) );
+		}
 
-			case MDIO_PORTC:
-				if( Copy_u8_PinDirection == PIN_OUTPUT )
-				{
-					DDRC = ( (0xF0) | ( DDRC & 0x0F) );
-				}
-				
-				else if( Copy_u8_PinDirection == PIN_INPUT )
-				{
-					DDRC = ( (0x00) | ( DDRC & 0x0F) );
-				}
-				
-				else
-				{
-					LOC_Error_state_ReturnState = NOK;
-				}
-				break;
-
-			case MDIO_PORTD:
-				if( Copy_u8_PinDirection == PIN_OUTPUT )
-				{
-					DDRD = ( (0xF0) | ( DDRD & 0x0F) );
-				}
-				
-				else if( Copy_u8_PinDirection == PIN_INPUT )
-				{
-					DDRD = ( (0x00) | ( DDRD & 0x0F) );
-				}
-				
-				else
-				{
-					LOC_Error_state_ReturnState = NOK;
-				}
-				break;
-			
-			default:
-				LOC_Error_state_ReturnState = NOK;
-				break;
+		else
+		{
+			LOC_Error_state_ReturnState = NOK;
 		}
 	}
 
-	
 	else
 	{
 		LOC_Error_state_ReturnState = NOK;
