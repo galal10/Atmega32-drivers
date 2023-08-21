@@ -4,12 +4,6 @@
 #include "../../LIB/LSTD_TYPES.h"
 #include "../../LIB/LBITS.h"
 
-/* Copy_u8_PortNumber Options */
-#define MDIO_PORTA	0
-#define MDIO_PORTB	1
-#define MDIO_PORTC	2
-#define MDIO_PORTD	3
-
 /* Copy_u8_PinDirection Options */
 #define PIN_INPUT	0
 #define PIN_OUTPUT	1
@@ -25,6 +19,15 @@
 /* Copy_u8_PinPos Options */
 #define PIN_LSB		0
 #define PIN_MSB		1
+
+/* Copy_u8_PortNumber Options */
+typedef enum
+{
+	MDIO_PORTA = 0,
+	MDIO_PORTB,
+	MDIO_PORTC,
+	MDIO_PORTD
+}MDIO_PORT;
 
 /* Copy_u8_PinNumber Options */
 typedef enum
