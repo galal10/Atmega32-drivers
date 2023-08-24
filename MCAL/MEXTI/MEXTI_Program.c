@@ -4,6 +4,9 @@
 #include "MEXTI_Private.h"
 #include "MEXTI_Interface.h"
 
+/********************Pointer to functions to be assigned to ISR**********************************/
+static void (* GP_INT_CallBack[3]) (void) = {NULL_PTR};
+
 /* EXTI0 Initialization */
 void MEXTI0_Vid_Init(void)
 {
