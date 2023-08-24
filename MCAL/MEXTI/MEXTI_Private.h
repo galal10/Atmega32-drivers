@@ -29,6 +29,15 @@
 #define MEXTI_FALLING_EDGE				0x02
 #define MEXTI_RISING_EDGE				0x03
 
+/* interrupt vectors */
+#define INT0_vect				__vector_1
+#define INT1_vect				__vector_2
+#define INT2_vect				__vector_3
+
+#define ISR_NOBLOCK				__attribute__((interrupt))
+#define ISR_NAKED				__attribute__((naked))
+
+
 #define ISR(vector, ...)	\
 void vector(void) __attribute__((signal)) __VA_ARGS__;\
 void vector(void)
