@@ -148,5 +148,11 @@ Error_state MEXTI_Error_state_SetCallBack(MEXTI_EXTI_ID_t Copy_EXTI_ID, void (*P
 		GP_INT_CallBack[EXTI2] = P_EXTICallBack;
 		break;
 
+	default:
+		LOC_Error_state_ReturnState = NOK;
+		break;
 	}
+
+	return LOC_Error_state_ReturnState;
+}
 }
