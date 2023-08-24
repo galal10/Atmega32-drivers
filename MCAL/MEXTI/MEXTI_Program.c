@@ -127,3 +127,7 @@ Error_state MEXTI_Error_state_SenseControl(MEXTI_EXTI_ID_t Copy_EXTI_ID, MEXTI_S
 
 	return LOC_Error_state_ReturnState;
 }
+
+Error_state MEXTI_Error_state_SetCallBack(MEXTI_EXTI_ID_t Copy_EXTI_ID, void (*P_EXTICallBack)(void))
+{
+}
