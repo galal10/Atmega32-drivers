@@ -29,4 +29,8 @@
 #define MEXTI_FALLING_EDGE				0x02
 #define MEXTI_RISING_EDGE				0x03
 
+#define ISR(vector, ...)	\
+void vector(void) __attribute__((signal)) __VA_ARGS__;\
+void vector(void)
+
 #endif /* MEXTI_PRIVATE_H_ */
