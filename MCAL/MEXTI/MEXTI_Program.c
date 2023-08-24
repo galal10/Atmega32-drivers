@@ -155,4 +155,18 @@ Error_state MEXTI_Error_state_SetCallBack(MEXTI_EXTI_ID_t Copy_EXTI_ID, void (*P
 
 	return LOC_Error_state_ReturnState;
 }
+/******************************************ISR************************************************/
+ISR(INT0_vect)
+{
+	GP_INT_CallBack[EXTI0]();
+}
+
+ISR(INT1_vect)
+{
+	GP_INT_CallBack[EXTI1]();
+}
+
+ISR(INT2_vect)
+{
+	GP_INT_CallBack[EXTI2]();
 }
