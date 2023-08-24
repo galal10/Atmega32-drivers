@@ -134,4 +134,7 @@ Error_state MEXTI_Error_state_SenseControl(MEXTI_EXTI_ID_t Copy_EXTI_ID, MEXTI_S
 Error_state MEXTI_Error_state_SetCallBack(MEXTI_EXTI_ID_t Copy_EXTI_ID, void (*P_EXTICallBack)(void))
 {
 	Error_state LOC_Error_state_ReturnState = OK;
+	switch(Copy_EXTI_ID)
+	{
+	}
 }
