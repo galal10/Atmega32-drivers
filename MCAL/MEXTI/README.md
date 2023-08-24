@@ -13,6 +13,12 @@
 #include "HAL/HLED/HLED_Interface.h"
 
 LED_t Led1={MDIO_PORTC,LED3};
+
+void func1(void)
+{
+	HLED_Vid_Led_Toggle(&Led1);
+}
+
 int main(void)
 {
 	/* set pinD2 as an input ==> EXTI0 */
@@ -22,20 +28,15 @@ int main(void)
 	/* set pinC2 as an output ==> led*/
 	HLED_Vid_Init(&Led1);
 	/* Enable EXTI0 */
+	MEXTI_Error_state_SetCallBack(EXTI0, func1);
 	MEXTI0_Vid_Init();
 	/* Enable General interrupt */
 	MGIE_Vid_Enable();
-	MEXTI_Vid_SenseControl(EXTI0, RISING_EDGE);
+	MEXTI_Error_state_SenseControl(EXTI0, LOW_LEVEL);
 	while(1)
 	{
 	}
 	return 0;
-}
-
-void __vector_1(void)       __attribute__((signal));
-void __vector_1(void)
-{
-	HLED_Vid_Led_Toggle(&Led1);
 }
 
 ```
