@@ -30,5 +30,7 @@ void MEXTI2_Vid_Init(void);
 /* Select Sense control Register */
 Error_state MEXTI_Error_state_SenseControl(MEXTI_EXTI_ID_t Copy_EXTI_ID, MEXTI_SENSE_CONTROL_t Copy_SenseControl);
 
+/* CallBack function */
+Error_state MEXTI_Error_state_SetCallBack(MEXTI_EXTI_ID_t Copy_EXTI_ID, void (*P_EXTICallBack)(void));
 
 #endif /* MEXTI_INTERFACE_H_ */
