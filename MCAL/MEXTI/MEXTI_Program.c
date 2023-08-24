@@ -139,5 +139,10 @@ Error_state MEXTI_Error_state_SetCallBack(MEXTI_EXTI_ID_t Copy_EXTI_ID, void (*P
 	case EXTI0:
 		GP_INT_CallBack[EXTI0] = P_EXTICallBack;
 		break;
+
+	case EXTI1:
+		GP_INT_CallBack[EXTI1] = P_EXTICallBack;
+		break;
+
 	}
 }
