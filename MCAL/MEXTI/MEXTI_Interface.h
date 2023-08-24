@@ -1,6 +1,7 @@
 #ifndef MEXTI_INTERFACE_H_
 #define MEXTI_INTERFACE_H_
 
+/* Copy_EXTI_ID Parameter */
 typedef enum
 {
 	EXTI0 = 0,
@@ -8,6 +9,7 @@ typedef enum
 	EXTI2
 }MEXTI_EXTI_ID_t;
 
+/* Copy_SenseControl Parameter */
 typedef enum
 {
 	LOW_LEVEL = 0,
@@ -26,6 +28,7 @@ void MEXTI1_Vid_Init(void);
 void MEXTI2_Vid_Init(void);
 
 /* Select Sense control Register */
-Error_state MEXTI_Vid_SenseControl(MEXTI_EXTI_ID_t Copy_EXTI_ID, MEXTI_SENSE_CONTROL_t Copy_SenseControl);
+Error_state MEXTI_Error_state_SenseControl(MEXTI_EXTI_ID_t Copy_EXTI_ID, MEXTI_SENSE_CONTROL_t Copy_SenseControl);
+
 
 #endif /* MEXTI_INTERFACE_H_ */

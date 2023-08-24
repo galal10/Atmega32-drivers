@@ -79,7 +79,7 @@ void MEXTI2_Vid_Init(void)
 }
 
 /* Select Sense control Register */
-Error_state MEXTI_Vid_SenseControl(MEXTI_EXTI_ID_t Copy_EXTI_ID, MEXTI_SENSE_CONTROL_t Copy_SenseControl)
+Error_state MEXTI_Error_state_SenseControl(MEXTI_EXTI_ID_t Copy_EXTI_ID, MEXTI_SENSE_CONTROL_t Copy_SenseControl)
 {
 	Error_state LOC_Error_state_ReturnState = OK;
 	switch(Copy_EXTI_ID)
