@@ -14,7 +14,7 @@
 
 LED_t Led1={MDIO_PORTC,LED3};
 
-void func1(void)
+void App_Vid_EXTI0ISR(void)
 {
 	HLED_Vid_Led_Toggle(&Led1);
 }
@@ -28,13 +28,14 @@ int main(void)
 	/* set pinC2 as an output ==> led*/
 	HLED_Vid_Init(&Led1);
 	/* Enable EXTI0 */
-	MEXTI_Error_state_SetCallBack(EXTI0, func1);
+	MEXTI_Error_state_SetCallBack(EXTI0, App_Vid_EXTI0ISR);
 	MEXTI0_Vid_Init();
 	/* Enable General interrupt */
 	MGIE_Vid_Enable();
 	MEXTI_Error_state_SenseControl(EXTI0, LOW_LEVEL);
 	while(1)
 	{
+		
 	}
 	return 0;
 }
