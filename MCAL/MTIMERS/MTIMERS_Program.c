@@ -44,5 +44,11 @@ void MTIMER0_Vid_Init(void)
 	#error "TIMER0 Mode is not valid"
 
 #endif
+
+	/* Timer0 OC0 PIN */
+	/* CLR bit COM00, COM01 */
+	TCCR0 &= 0xCF;
+	TCCR0 |= (TIMER0_SET_OC0_PIN_MODE << COM00);
+}
 }
 
