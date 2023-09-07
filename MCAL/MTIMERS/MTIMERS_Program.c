@@ -19,5 +19,9 @@ static void (*TIMER2_CallBack[TIMER2_ISR_VECTORS])(void) = {NULL_PTR};
 
 void MTIMER0_Vid_Init(void)
 {
+	/* select the suitable pre scaler */
+	/* clear cs00, cs01, cs02 bits */
+	TCCR0 &= 0xF8;
+	TCCR0 |= TIMER0_SET_PRESCALER;
 }
 
