@@ -240,6 +240,25 @@ void MTIMERS_Vid_SetPreLoad(u8 Copy_u8_TimerID, u16 Copy_u16_Preload)
 	}
 }
 
+void MTIMERS_Vid_SetCTCValue(u8 Copy_u8_TimerID, u16 Copy_u16_CTCValue)
+{
+	switch(Copy_u8_TimerID)
+	{
+		case TIMER0: OCR0 = Copy_u16_CTCValue; break;
+
+		case TIMER1:
+			#if TIMER1_COMPARE_REGISTER == CMP_1A
+				OCR1A = Copy_u16_CTCValue;
+			#elif TIMER1_COMPARE_REGISTER == CMP_1B
+				OCR1B = Copy_u16_CTCValue;
+			#endif
+
+			break;
+
+		case TIMER2: OCR2 = Copy_u16_CTCValue; break;
+	}
+}
+
 #endif
 }
 
