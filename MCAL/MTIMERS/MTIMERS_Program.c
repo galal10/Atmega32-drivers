@@ -210,6 +210,12 @@ void MTIMER2_Vid_Init(void)
 	#error "TIMER2 Mode is not valid"
 
 #endif
+
+	/* Timer2 OC2 PIN */
+	/* CLR bit COM21 COM20 */
+	TCCR2 &= 0xCF;
+	TCCR2 |= (TIMER2_SET_OC2_PIN_MODE << COM20);
+}
 }
 #endif
 }
