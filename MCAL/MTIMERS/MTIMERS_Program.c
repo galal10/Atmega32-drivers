@@ -50,5 +50,10 @@ void MTIMER0_Vid_Init(void)
 	TCCR0 &= 0xCF;
 	TCCR0 |= (TIMER0_SET_OC0_PIN_MODE << COM00);
 }
+
+void MTIMER1_Vid_Init(void)
+{
+}
+
 }
 
