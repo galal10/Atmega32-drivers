@@ -185,6 +185,10 @@ void MTIMER1_Vid_Init(void)
 
 void MTIMER2_Vid_Init(void)
 {
+	/* select the suitable pre scaler */
+	/* clear CS22 CS21 CS20 bits */
+	TCCR2 &= 0xF8;
+	TCCR2 |= TIMER2_SET_PRESCALER;
 }
 #endif
 }
