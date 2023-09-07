@@ -1,0 +1,43 @@
+/*
+ * MTIMER2_Config.h
+ *
+ *  Created on: Sep 5, 2023
+ *      Author: galal
+ */
+
+#ifndef MTIMER2_CONFIG_H_
+#define MTIMER2_CONFIG_H_
+
+/* Timer2 Pre-scaler options:
+ * 1- TIMER2_STOP
+ * 2- TIMER2_SCALER_1
+ * 3- TIMER2_SCALER_8
+ * 4- TIMER2_SCALER_32
+ * 5- TIMER2_SCALER_64
+ * 6- TIMER2_SCALER_128
+ * 7- TIMER2_SCALER_256
+ * 8- TIMER2_SCALER_1024
+ * */
+#define TIMER2_SET_PRESCALER			TIMER2_SCALER_1024
+
+/* Timer2 mode options:
+ * 1- TIMER2_NORMAL_MODE
+ * 2- TIMER2_PHASECORRECT_MODE
+ * 3- TIMER2_CTC_MODE
+ * 4- TIMER2_FASTPWM_MODE
+ * */
+#define TIMER2_SET_MODE					TIMER2_FASTPWM_MODE
+
+/* Timer2 CTC OC2 PIN options:
+ * 1- TIMER2_OC2_PIN_DISCONNECTED			// All modes
+ * 2- TIMER2_OC2_PIN_TOGGLE					// Normal mode, CTC mode
+ * 3- TIMER2_OC2_PIN_CLR_NON_INVERTING		// All modes
+ * 4- TIMER2_OC2_PIN_SET_INVERTING			// All modes
+ * */
+#define	TIMER2_SET_OC2_PIN_MODE			TIMER2_OC2_PIN_SET_INVERTING
+
+
+#define TIMER2_ISR_VECTORS				2
+
+
+#endif /* MTIMER2_CONFIG_H_ */
