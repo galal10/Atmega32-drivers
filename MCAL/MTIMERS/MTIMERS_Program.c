@@ -334,5 +334,36 @@ void MTIMERS_Vid_DisableInterrupt(u8 Copy_u8_TimerID, u8 Copy_u8_InterruptType)
 	}
 }
 
+void MTIMERS_Vid_SetCallBack(u8 Copy_u8_TimerID, u8 Copy_u8_InterruptType, void (*Copy_Vid_CallBack)(void))
+{
+	switch(Copy_u8_TimerID)
+	{
+		case TIMER0:
+			switch(Copy_u8_InterruptType)
+			{
+				case TIMER0_OVF_INT : TIMER0_CallBack[TIMER0_OVF_INT] = Copy_Vid_CallBack;  break;
+				case TIMER0_CTC_INT : TIMER0_CallBack[TIMER0_CTC_INT] = Copy_Vid_CallBack;  break;
+			}
+		break;
+
+		case TIMER1:
+			switch(Copy_u8_InterruptType)
+			{
+				case TIMER1_OVF_INT : 	TIMER1_CallBack[TIMER1_OVF_INT] = Copy_Vid_CallBack;  break;
+				case TIMER1_CTC1A_INT : TIMER1_CallBack[TIMER1_CTC1A_INT] = Copy_Vid_CallBack; break;
+				case TIMER1_CTC1B_INT : TIMER1_CallBack[TIMER1_CTC1B_INT] = Copy_Vid_CallBack; break;
+				case TIMER1_ICU_INT : 	TIMER1_CallBack[TIMER1_ICU_INT] = Copy_Vid_CallBack;  break;
+			}
+		break;
+
+		case TIMER2:
+			switch(Copy_u8_InterruptType)
+			{
+				case TIMER2_OVF_INT : TIMER2_CallBack[TIMER2_OVF_INT] = Copy_Vid_CallBack;  break;
+				case TIMER2_CTC_INT : TIMER2_CallBack[TIMER2_CTC_INT] = Copy_Vid_CallBack;  break;
+			}
+		break;
+	}
+
 }
 
