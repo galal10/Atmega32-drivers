@@ -270,5 +270,37 @@ void MTIMER1_Vid_SetTopValue(u16 Copy_u16_TopValue)
 #endif
 }
 
+void MTIMERS_Vid_EnableInterrupt(u8 Copy_u8_TimerID, u8 Copy_u8_InterruptType)
+{
+	switch(Copy_u8_TimerID)
+	{
+		case TIMER0:
+			switch(Copy_u8_InterruptType)
+			{
+				case TIMER0_OVF_INT : SET_BIT(TIMSK, TOIE0);  break;
+				case TIMER0_CTC_INT : SET_BIT(TIMSK, OCIE0);  break;
+			}
+		break;
+
+		case TIMER1:
+			switch(Copy_u8_InterruptType)
+			{
+				case TIMER1_OVF_INT : 	SET_BIT(TIMSK, TOIE1);  break;
+				case TIMER1_CTC1A_INT : SET_BIT(TIMSK, OCIE1A);  break;
+				case TIMER1_CTC1B_INT : SET_BIT(TIMSK, OCIE1B);  break;
+				case TIMER1_ICU_INT : 	SET_BIT(TIMSK, TICIE1);  break;
+			}
+		break;
+
+		case TIMER2:
+			switch(Copy_u8_InterruptType)
+			{
+				case TIMER2_OVF_INT : SET_BIT(TIMSK, TOIE2);  break;
+				case TIMER2_CTC_INT : SET_BIT(TIMSK, OCIE2);  break;
+			}
+		break;
+	}
+}
+
 }
 
