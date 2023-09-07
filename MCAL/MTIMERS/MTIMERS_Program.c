@@ -226,6 +226,20 @@ void MTIMERS_Vid_StopTimer(u8 Copy_u8_TimerID)
 		case TIMER2: TCCR2  &= 0xF8;  break; /* Clear bits CS22 CS21 CS20 */
 	}
 }
+
+void MTIMERS_Vid_SetPreLoad(u8 Copy_u8_TimerID, u16 Copy_u16_Preload)
+{
+	switch(Copy_u8_TimerID)
+	{
+		case TIMER0: TCNT0 = Copy_u16_Preload; break;
+
+		case TIMER1: TCNT1 = Copy_u16_Preload; break;
+
+		case TIMER2: TCNT2 = Copy_u16_Preload; break;
+
+	}
+}
+
 #endif
 }
 
