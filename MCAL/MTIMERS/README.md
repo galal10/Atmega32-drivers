@@ -45,7 +45,7 @@ int main(void)
 }
 ```
 
-# # test2
+## test2
 ```c
 #include "HAL/HLED/HLED_Interface.h"
 #include "MCAL/MGIE/MGIE_Interface.h"
@@ -91,7 +91,7 @@ int main(void)
 	return 0;
 }
 ```
-# # Servo test3
+## Servo test3
 ```c
 #include "MCAL/MDIO/MDIO_Interface.h"
 #include "MCAL/MTIMERS/MTIMERS_Interface.h"
