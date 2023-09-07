@@ -259,6 +259,14 @@ void MTIMERS_Vid_SetCTCValue(u8 Copy_u8_TimerID, u16 Copy_u16_CTCValue)
 	}
 }
 
+void MTIMER1_Vid_SetTopValue(u16 Copy_u16_TopValue)
+{
+#if TIMER1_SET_TOP_VALUE == SET_ON_ICR1
+	ICR1 = Copy_u16_TopValue;
+
+#elif TIMER1_SET_TOP_VALUE == SET_ON_OCR1A
+	OCR1A = Copy_u16_TopValue;
+
 #endif
 }
 
