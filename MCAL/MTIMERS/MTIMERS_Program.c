@@ -183,6 +183,9 @@ void MTIMER1_Vid_Init(void)
 #endif
 }
 
+void MTIMER2_Vid_Init(void)
+{
+}
 #endif
 }
 
