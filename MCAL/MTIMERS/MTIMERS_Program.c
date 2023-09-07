@@ -53,6 +53,11 @@ void MTIMER0_Vid_Init(void)
 
 void MTIMER1_Vid_Init(void)
 {
+	/* select the suitable pre scaler */
+	/* clear CS12,CS11,CS10 bits */
+	TCCR1B &= 0xF8;
+	TCCR1B |= TIMER1_SET_PRESCALER;
+
 }
 
 }
