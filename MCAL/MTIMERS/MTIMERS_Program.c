@@ -12,3 +12,8 @@
 #include "MTIMER2_Config.h"
 #include "MTIMERS_Interface.h"
 #include "MTIMERS_Private.h"
+
+static void (*TIMER0_CallBack[TIMER0_ISR_VECTORS])(void) = {NULL_PTR};
+static void (*TIMER1_CallBack[TIMER1_ISR_VECTORS])(void) = {NULL_PTR};
+static void (*TIMER2_CallBack[TIMER2_ISR_VECTORS])(void) = {NULL_PTR};
+
