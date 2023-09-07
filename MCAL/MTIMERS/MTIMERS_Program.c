@@ -216,6 +216,15 @@ void MTIMER2_Vid_Init(void)
 	TCCR2 &= 0xCF;
 	TCCR2 |= (TIMER2_SET_OC2_PIN_MODE << COM20);
 }
+
+void MTIMERS_Vid_StopTimer(u8 Copy_u8_TimerID)
+{
+	switch(Copy_u8_TimerID)
+	{
+		case TIMER0: TCCR0  &= 0xF8;  break; /* Clear bits CS02 CS01 CS00 */
+		case TIMER1: TCCR1B &= 0xF8;  break; /* Clear bits CS12 CS11 CS10 */
+		case TIMER2: TCCR2  &= 0xF8;  break; /* Clear bits CS22 CS21 CS20 */
+	}
 }
 #endif
 }
