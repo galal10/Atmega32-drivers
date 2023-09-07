@@ -367,3 +367,43 @@ void MTIMERS_Vid_SetCallBack(u8 Copy_u8_TimerID, u8 Copy_u8_InterruptType, void 
 
 }
 
+/* Timers ISR */
+ISR(TIMER0_OVF)
+{
+	TIMER0_CallBack[TIMER0_OVF_INT]();
+}
+
+ISR(TIMER0_COMP)
+{
+	TIMER0_CallBack[TIMER0_CTC_INT]();
+}
+
+ISR(TIMER1_OVF)
+{
+	TIMER1_CallBack[TIMER1_OVF_INT]();
+}
+
+ISR(TIMER1_COMPA)
+{
+	TIMER1_CallBack[TIMER1_CTC1A_INT]();
+}
+
+ISR(TIMER1_COMPB)
+{
+	TIMER1_CallBack[TIMER1_CTC1B_INT]();
+}
+
+ISR(TIMER1_CAPT)
+{
+	TIMER1_CallBack[TIMER1_ICU_INT]();
+}
+
+ISR(TIMER2_OVF)
+{
+	TIMER2_CallBack[TIMER2_OVF_INT]();
+}
+
+ISR(TIMER2_COMP)
+{
+	TIMER2_CallBack[TIMER2_CTC_INT]();
+}
