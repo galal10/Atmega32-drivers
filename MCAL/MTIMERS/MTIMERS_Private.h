@@ -156,6 +156,13 @@ typedef enum
 #define SET_ON_ICR1  							0
 #define SET_ON_OCR1A 							1
 
+
+#define DISABLE									0
+#define ENABLE									1
+
+#define ICU_RISING_EDGE							1
+#define ICU_FALLING_EDGE						0
+
 /* Timer1 vectors */
 #define TIMER1_CAPT				__vector_6
 #define TIMER1_COMPA			__vector_7
