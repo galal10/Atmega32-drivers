@@ -52,6 +52,10 @@ void MTIMERS_Vid_SetCTCValue(u8 Copy_u8_TimerID, u16 Copy_u16_CTCValue);
 
 void MTIMER1_Vid_SetTopValue(u16 Copy_u16_TopValue);
 
+void MTIMER1_Vid_SetICUTrigger(ICU_Trigger_t ICU_trigger);
+
+u16 MTIMER1_u16_GetCaptureUnitValue(void);
+
 void MTIMERS_Vid_EnableInterrupt(u8 Copy_u8_TimerID, u8 Copy_u8_InterruptType);
 
 void MTIMERS_Vid_DisableInterrupt(u8 Copy_u8_TimerID, u8 Copy_u8_InterruptType);
