@@ -181,6 +181,26 @@ void MTIMER1_Vid_Init(void)
 	#error "TIMER1 Compare Output Mode is not valid"
 
 #endif
+
+#if TIMER1_ICU == ENABLE
+
+	#if ICU_NoiseCanceler == ENABLE
+		SET_BIT(TCCR1B, ICNC1);
+
+	#elif ICU_NoiseCanceler == DISABLE
+		CLR_BIT( TCCR1B, ICNC1 ) ;
+	#endif
+
+	// Select the beginning of the ICU edge.
+	#if ICU_Edge_Select == ICU_RISING_EDGE
+		SET_BIT(TCCR1B, ICES1);
+
+	#elif ICU_Edge_Select == ICU_FALLING_EDGE
+		CLR_BIT(TCCR1B, ICES1);
+
+	#endif
+
+#endif
 }
 
 void MTIMER2_Vid_Init(void)
