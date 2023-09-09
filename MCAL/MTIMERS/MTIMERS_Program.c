@@ -290,6 +290,11 @@ void MTIMER1_Vid_SetTopValue(u16 Copy_u16_TopValue)
 #endif
 }
 
+u16 MTIMER1_u16_GetCaptureUnitValue(void)
+{
+	return ICR1;
+}
+
 void MTIMERS_Vid_EnableInterrupt(u8 Copy_u8_TimerID, u8 Copy_u8_InterruptType)
 {
 	switch(Copy_u8_TimerID)
