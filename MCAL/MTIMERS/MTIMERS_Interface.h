@@ -31,6 +31,12 @@ typedef enum
 	TIMER2_CTC_INT
 }InterruptType_t;
 
+typedef enum
+{
+	ICU_FALLING = 0,
+	ICU_RISING
+}ICU_Trigger_t;
+
 /* Timer0 Initialization */
 void MTIMER0_Vid_Init(void);
 /* Timer1 Initialization */
