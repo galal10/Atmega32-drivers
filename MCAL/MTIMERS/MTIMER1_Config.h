@@ -106,5 +106,22 @@
 
 #define TIMER1_ISR_VECTORS								4
 
+/* Options:
+ * 1- ENABLE
+ * 2- DISABLE
+ *  */
+#define TIMER1_ICU										ENABLE
+
+/* Options:
+ * 1- ENABLE
+ * 2- DISABLE
+ *  */
+#define ICU_NoiseCanceler								DISABLE
+
+/* Edge select options:
+ * 1- ICU_RISING_EDGE
+ * 2- ICU_FALLING_EDGE
+ * */
+#define ICU_Edge_Select									ICU_RISING_EDGE
 
 #endif /* MTIMER1_CONFIG_H_ */
