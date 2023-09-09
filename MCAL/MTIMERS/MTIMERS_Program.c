@@ -290,6 +290,15 @@ void MTIMER1_Vid_SetTopValue(u16 Copy_u16_TopValue)
 #endif
 }
 
+void MTIMER1_Vid_SetICUTrigger(ICU_Trigger_t ICU_trigger)
+{
+	switch(ICU_trigger)
+	{
+		case ICU_RISING : SET_BIT(TCCR1B, ICES1);	break;
+		case ICU_FALLING: CLR_BIT(TCCR1B, ICES1);	break;
+	}
+}
+
 u16 MTIMER1_u16_GetCaptureUnitValue(void)
 {
 	return ICR1;
