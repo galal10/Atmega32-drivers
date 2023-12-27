@@ -48,6 +48,10 @@ void MTIMERS_Vid_StopTimer(u8 Copy_u8_TimerID);
 /* Set Preload Function */
 void MTIMERS_Vid_SetPreLoad(u8 Copy_u8_TimerID, u16 Copy_u16_Preload);
 /* Set CTC value Function */
+u16 MTIMERS_u16_GetPreLoad(u8 Copy_u8_TimerID);
+
+u16 MTIMERS_u16_GetCTCValue(u8 Copy_u8_TimerID);
+
 void MTIMERS_Vid_SetCTCValue(u8 Copy_u8_TimerID, u16 Copy_u16_CTCValue);
 
 void MTIMER1_Vid_SetTopValue(u16 Copy_u16_TopValue);

@@ -279,6 +279,45 @@ void MTIMERS_Vid_SetCTCValue(u8 Copy_u8_TimerID, u16 Copy_u16_CTCValue)
 	}
 }
 
+u16 MTIMERS_u16_GetPreLoad(u8 Copy_u8_TimerID)
+{
+	u16 PreLoadVal = 0;
+
+	switch(Copy_u8_TimerID)
+	{
+		case TIMER0: PreLoadVal = TCNT0; break;
+
+		case TIMER1: PreLoadVal = TCNT1; break;
+
+		case TIMER2: PreLoadVal = TCNT2; break;
+	}
+
+	return PreLoadVal;
+}
+
+u16 MTIMERS_u16_GetCTCValue(u8 Copy_u8_TimerID)
+{
+	u16 CTCVal = 0;
+
+	switch(Copy_u8_TimerID)
+	{
+		case TIMER0: CTCVal = OCR0; break;
+
+		case TIMER1:
+			#if TIMER1_COMPARE_REGISTER == CMP_1A
+			CTCVal = OCR1A;
+			#elif TIMER1_COMPARE_REGISTER == CMP_1B
+			CTCVal = OCR1B ;
+			#endif
+
+			break;
+
+		case TIMER2: CTCVal = OCR2; break;
+	}
+
+	return CTCVal;
+}
+
 void MTIMER1_Vid_SetTopValue(u16 Copy_u16_TopValue)
 {
 #if TIMER1_SET_TOP_VALUE == SET_ON_ICR1
